@@ -44,15 +44,16 @@ git push
 - [ ] **Important** : Amazon exige **trois ventes dans les 180 jours** suivant l'inscription pour valider le compte, sinon il est fermé (tu peux te réinscrire). Partage les articles autour de toi au lancement pour passer ce cap.
 - [ ] Amazon vérifie aussi que la mention « En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises » figure sur le site : elle est déjà dans le pied de page de chaque page.
 
-## 4. Être trouvé sur Google — 10 min
+## 4. Être trouvé sur Google — FAIT le 24/10/2026 (propriété vérifiée, sitemap envoyé ; Google peut mettre 1 à 2 jours à le lire)
 
-- [ ] Va sur https://search.google.com/search-console, ajoute la propriété « Préfixe d'URL » avec l'adresse de ton site, valide par balise HTML (colle la balise dans `templates/base.html` juste avant `</head>`, puis commit et push).
-- [ ] Dans Search Console : **Sitemaps** → ajoute `sitemap.xml`.
+- [x] Va sur https://search.google.com/search-console, ajoute la propriété « Préfixe d'URL » avec l'adresse de ton site, valide par balise HTML (colle la balise dans `templates/base.html` juste avant `</head>`, puis commit et push).
+- [x] Dans Search Console : **Sitemaps** → ajoute `sitemap.xml`.
 - [ ] Même chose, facultatif, sur https://www.bing.com/webmasters (on peut importer directement depuis Search Console).
 
-## 5. Les mentions légales — 5 min
+## 5. Les mentions légales — éditeur anonyme + hébergeur en place le 24/10/2026 ; reste l'adresse e-mail de contact
 
-- [ ] Ouvre `content/pages/mentions-legales.md` et remplace les « À COMPLÉTER » par ton nom et ton adresse (obligatoire en France pour un éditeur de site, même personnel). Remplace aussi `contact@exemple.fr` ici et dans `config.json` par une adresse que tu consultes.
+- [x] Mentions légales rédigées en mode anonyme (particulier non professionnel, coordonnées détenues par l'hébergeur).
+- [ ] Remplacer `contact@exemple.fr` dans `content/pages/mentions-legales.md` et `config.json` par une adresse que tu consultes.
 - [ ] Commit et push.
 
 ## Facultatif, plus tard

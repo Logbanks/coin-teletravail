@@ -6,17 +6,15 @@ slug: mentions-legales
 
 ## Éditeur du site
 
-Le site Le Coin Télétravail est édité à titre personnel par :
+Le Coin Télétravail est un site personnel, édité à titre non professionnel par un particulier.
 
-- **Nom :** À COMPLÉTER
-- **Adresse :** À COMPLÉTER (une personne physique peut demander à ne pas publier son adresse ; dans ce cas, seul l'hébergeur doit figurer ici, mais l'éditeur doit avoir communiqué ses coordonnées à l'hébergeur)
-- **Courriel :** contact@exemple.fr
+Conformément à l'article 6, III, 2 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, l'éditeur a choisi de ne pas publier son identité. Ses coordonnées ont été communiquées à l'hébergeur, qui les tient à la disposition des autorités judiciaires sur demande.
 
-Directeur de la publication : la personne nommée ci-dessus.
+Pour toute question, remarque ou demande de retrait, vous pouvez écrire à : **contact@exemple.fr**.
 
 ## Hébergement
 
-Le site est hébergé par GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis, via le service GitHub Pages.
+Le site est hébergé par GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis, via le service GitHub Pages. Site : https://github.com
 
 ## Programme d'affiliation
 
