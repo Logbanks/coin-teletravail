@@ -2,12 +2,12 @@
 
 Tout le reste est automatique. Coche au fur et à mesure.
 
-## 1. Mettre le site en ligne gratuitement (GitHub Pages) — 15 min
+## 1. Mettre le site en ligne gratuitement (GitHub Pages) — FAIT le 24/10/2026 : https://logbanks.github.io/coin-teletravail/
 
-- [ ] Crée un compte sur https://github.com si tu n'en as pas (gratuit).
-- [ ] Crée un nouveau dépôt **public** nommé exactement `coin-teletravail` (sans README, sans licence, vide).
-- [ ] Dans `config.json`, remplace `VOTRE-IDENTIFIANT-GITHUB` par ton identifiant GitHub dans la ligne `"url"`.
-- [ ] Ouvre un terminal dans le dossier `coin-teletravail` et envoie le site (remplace TON-IDENTIFIANT) :
+- [x] Crée un compte sur https://github.com si tu n'en as pas (gratuit).
+- [x] Crée un nouveau dépôt **public** nommé exactement `coin-teletravail` (sans README, sans licence, vide).
+- [x] Dans `config.json`, remplace `VOTRE-IDENTIFIANT-GITHUB` par ton identifiant GitHub dans la ligne `"url"`.
+- [x] Ouvre un terminal dans le dossier `coin-teletravail` et envoie le site (remplace TON-IDENTIFIANT) :
 
 ```bash
 git add -A
@@ -16,9 +16,9 @@ git remote add origin https://github.com/TON-IDENTIFIANT/coin-teletravail.git
 git push -u origin main
 ```
 
-- [ ] Sur GitHub, dans le dépôt : **Settings → Pages → Build and deployment → Source** : choisis **GitHub Actions**.
-- [ ] Onglet **Actions** du dépôt : si un message demande d'activer les workflows, clique sur « I understand… enable them ».
-- [ ] Attends deux minutes : le site est visible sur `https://TON-IDENTIFIANT.github.io/coin-teletravail/`.
+- [x] Sur GitHub, dans le dépôt : **Settings → Pages → Build and deployment → Source** : choisis **GitHub Actions**.
+- [x] Onglet **Actions** du dépôt : si un message demande d'activer les workflows, clique sur « I understand… enable them ».
+- [x] Attends deux minutes : le site est visible sur `https://TON-IDENTIFIANT.github.io/coin-teletravail/`.
 
 ## 2. Activer la rédaction automatique hebdomadaire — 10 min
 
