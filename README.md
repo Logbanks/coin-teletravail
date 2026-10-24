@@ -72,7 +72,7 @@ python scripts/build.py
 python -m http.server 8000 --directory dist
 ```
 
-Puis ouvre http://localhost:8000/coin-teletravail/ (le préfixe dépend de `url` dans `config.json`).
+Puis ouvre http://localhost:8000/ (si `url` dans `config.json` contient un sous-dossier, ajoute-le au chemin).
 
 Pour tester la rédaction automatique sur ta machine :
 

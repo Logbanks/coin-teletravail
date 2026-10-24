@@ -56,6 +56,15 @@ git push
 - [ ] Remplacer `contact@logroot.fr` dans `content/pages/mentions-legales.md` et `config.json` par une adresse que tu consultes.
 - [x] Commit et push.
 
+## 6. Domaine personnalisé — FAIT le 24/10/2026 : https://teletravail.logroot.fr (HTTPS forcé, ancienne adresse redirigée)
+
+- [ ] Search Console : ajouter la propriété `https://teletravail.logroot.fr/` (préfixe d'URL, vérification par balise HTML déjà en place) et y envoyer `sitemap.xml`.
+- [ ] Amazon Partenaires : Paramètres du compte → informations sur le site Web → ajouter `https://teletravail.logroot.fr`.
+
+## 7. Illustrations — FAIT le 24/10/2026
+
+Neuf illustrations (une par catégorie + accueil) dans `static/img/`. Pour en changer une, remplace le fichier JPG du même nom. Pour une image propre à un article, ajoute `image: static/img/mon-image.jpg` dans son en-tête. Les originaux sont dans ton Canva (« Support d'illustrations vierge »).
+
 ## Facultatif, plus tard
 
 - **Un nom de domaine** (environ 10 €/an, par exemple `coin-teletravail.fr`) améliore la crédibilité et le référencement. Dans `config.json`, mets `"url": "https://coin-teletravail.fr"` ; le fichier `CNAME` est généré automatiquement. Chez ton registrar, ajoute un enregistrement CNAME `www` ou les 4 enregistrements A de GitHub Pages (voir la doc GitHub « Managing a custom domain »).
