@@ -58,8 +58,8 @@ git push
 
 ## 6. Domaine personnalisé — FAIT le 24/10/2026 : https://teletravail.logroot.fr (HTTPS forcé, ancienne adresse redirigée)
 
-- [ ] Search Console : ajouter la propriété `https://teletravail.logroot.fr/` (préfixe d'URL, vérification par balise HTML déjà en place) et y envoyer `sitemap.xml`.
-- [ ] Amazon Partenaires : Paramètres du compte → informations sur le site Web → ajouter `https://teletravail.logroot.fr`.
+- [x] Search Console : ajouter la propriété `https://teletravail.logroot.fr/` (préfixe d'URL, vérification par balise HTML déjà en place) et y envoyer `sitemap.xml`.
+- [x] Amazon Partenaires : Paramètres du compte → informations sur le site Web → ajouter `https://teletravail.logroot.fr`.
 
 ## 7. Illustrations — FAIT le 24/10/2026
 
