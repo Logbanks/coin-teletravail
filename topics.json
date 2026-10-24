@@ -1,35 +1,158 @@
 {
   "a_faire": [
-    {"titre": "Repose-pieds de bureau : utile ou gadget ?", "angle": "quand il aide vraiment, hauteur et inclinaison, pour qui", "category": "Accessoires"},
-    {"titre": "Clavier et souris ergonomiques : faut-il changer ses habitudes ?", "angle": "douleurs au poignet, clavier compact ou séparé, souris verticale", "category": "Accessoires"},
-    {"titre": "Support pour ordinateur portable : pourquoi en avoir un et comment le choisir", "angle": "hauteur des yeux, ventilation, modèles pliables pour nomades", "category": "Accessoires"},
-    {"titre": "Bras d'écran : libérer son bureau et régler la hauteur au millimètre", "angle": "compatibilité VESA, charge supportée, fixation pince ou perçage", "category": "Écrans et informatique"},
-    {"titre": "Webcam externe ou caméra intégrée : que choisir pour les visios ?", "angle": "qualité d'image, cadrage, micro intégré, budget raisonnable", "category": "Audio et visioconférence"},
-    {"titre": "Micro USB pour le télétravail : être bien entendu en réunion", "angle": "casque, micro de table, micro-cravate, réduction du bruit", "category": "Audio et visioconférence"},
-    {"titre": "Fauteuil gaming ou chaise de bureau : lequel pour télétravailler ?", "angle": "différences de conception, posture, durabilité", "category": "Chaises et sièges"},
-    {"titre": "Siège assis-genoux et tabouret ergonomique : pour varier les postures", "angle": "alternatives à la chaise classique, avantages et limites", "category": "Chaises et sièges"},
-    {"titre": "Bureau d'angle ou bureau droit : optimiser un petit espace", "angle": "dimensions, circulation, rangement, choix selon la pièce", "category": "Bureaux"},
-    {"titre": "Bureau pliable ou mural : télétravailler sans pièce dédiée", "angle": "solutions escamotables, charge, stabilité", "category": "Bureaux"},
-    {"titre": "Tapis anti-fatigue pour bureau debout : ce qu'il change vraiment", "angle": "épaisseur, matière, taille, pour qui", "category": "Bien-être au travail"},
-    {"titre": "Lampe de bureau LED : température de couleur et intensité expliquées", "angle": "kelvins, lumens, réglages, position sur le bureau", "category": "Éclairage"},
-    {"titre": "Anneau lumineux et éclairage pour visioconférence : bien paraître à l'écran", "angle": "placement, taille, lumière douce, éviter les reflets sur lunettes", "category": "Éclairage"},
-    {"titre": "Écran incurvé ou plat pour le travail de bureau", "angle": "immersion, lecture de tableaux, fatigue visuelle, place sur le bureau", "category": "Écrans et informatique"},
-    {"titre": "Station d'accueil USB-C : brancher tout son bureau d'un seul câble", "angle": "ports, alimentation, compatibilité, pièges courants", "category": "Écrans et informatique"},
-    {"titre": "Isolation phonique du coin bureau : réduire le bruit sans travaux", "angle": "panneaux acoustiques, rideaux, casque, organisation", "category": "Aménagement"},
-    {"titre": "Rangement de bureau : garder un espace de travail clair", "angle": "caissons, organisateurs, gestion des câbles", "category": "Aménagement"},
-    {"titre": "Gestion des câbles : un bureau propre en une heure", "angle": "goulottes, passe-câbles, multiprises fixées, méthode", "category": "Aménagement"},
-    {"titre": "Casque à réduction de bruit pour se concentrer en open space familial", "angle": "réduction active ou passive, confort longue durée, autonomie", "category": "Audio et visioconférence"},
-    {"titre": "Pauses actives et étirements au bureau : une routine simple", "angle": "fréquence, exercices sans matériel, rappels", "category": "Bien-être au travail"},
-    {"titre": "Plantes de bureau : lesquelles survivent à un coin sombre", "angle": "entretien minimal, lumière faible, bénéfices perçus", "category": "Aménagement"},
-    {"titre": "Chauffage d'appoint pour bureau à domicile : chauffer une seule pièce sans exploser la facture", "angle": "types d'appareils, sécurité, consommation", "category": "Bien-être au travail"},
-    {"titre": "Purificateur d'air et bureau à domicile : utile ou superflu ?", "angle": "cas d'usage, bruit, filtres, coût d'entretien", "category": "Bien-être au travail"},
-    {"titre": "Deuxième écran portable : travailler à deux écrans partout", "angle": "taille, alimentation USB-C, poids, qualité d'image", "category": "Écrans et informatique"},
-    {"titre": "Imprimante pour la maison : en a-t-on encore besoin en télétravail ?", "angle": "jet d'encre ou laser, coût à la page, alternatives", "category": "Écrans et informatique"},
-    {"titre": "Onduleur et protection électrique pour son matériel de travail", "angle": "coupures, surtensions, dimensionnement", "category": "Écrans et informatique"},
-    {"titre": "Coussin lombaire et coussin d'assise : améliorer une chaise existante", "angle": "quand ça suffit, quand il faut changer de chaise", "category": "Chaises et sièges"},
-    {"titre": "Hauteur de bureau idéale : la régler selon sa taille", "angle": "méthode simple, bureau fixe ou réglable, erreurs courantes", "category": "Bureaux"},
-    {"titre": "Télétravailler depuis la table de la cuisine : les ajustements qui changent tout", "angle": "solutions temporaires, posture, rangement du soir", "category": "Aménagement"},
-    {"titre": "Tableau blanc, planning mural et organisation visuelle du bureau", "angle": "formats, aimanté ou effaçable, usages", "category": "Accessoires"}
+    {
+      "titre": "Clavier et souris ergonomiques : faut-il changer ses habitudes ?",
+      "angle": "douleurs au poignet, clavier compact ou séparé, souris verticale",
+      "category": "Accessoires"
+    },
+    {
+      "titre": "Support pour ordinateur portable : pourquoi en avoir un et comment le choisir",
+      "angle": "hauteur des yeux, ventilation, modèles pliables pour nomades",
+      "category": "Accessoires"
+    },
+    {
+      "titre": "Bras d'écran : libérer son bureau et régler la hauteur au millimètre",
+      "angle": "compatibilité VESA, charge supportée, fixation pince ou perçage",
+      "category": "Écrans et informatique"
+    },
+    {
+      "titre": "Webcam externe ou caméra intégrée : que choisir pour les visios ?",
+      "angle": "qualité d'image, cadrage, micro intégré, budget raisonnable",
+      "category": "Audio et visioconférence"
+    },
+    {
+      "titre": "Micro USB pour le télétravail : être bien entendu en réunion",
+      "angle": "casque, micro de table, micro-cravate, réduction du bruit",
+      "category": "Audio et visioconférence"
+    },
+    {
+      "titre": "Fauteuil gaming ou chaise de bureau : lequel pour télétravailler ?",
+      "angle": "différences de conception, posture, durabilité",
+      "category": "Chaises et sièges"
+    },
+    {
+      "titre": "Siège assis-genoux et tabouret ergonomique : pour varier les postures",
+      "angle": "alternatives à la chaise classique, avantages et limites",
+      "category": "Chaises et sièges"
+    },
+    {
+      "titre": "Bureau d'angle ou bureau droit : optimiser un petit espace",
+      "angle": "dimensions, circulation, rangement, choix selon la pièce",
+      "category": "Bureaux"
+    },
+    {
+      "titre": "Bureau pliable ou mural : télétravailler sans pièce dédiée",
+      "angle": "solutions escamotables, charge, stabilité",
+      "category": "Bureaux"
+    },
+    {
+      "titre": "Tapis anti-fatigue pour bureau debout : ce qu'il change vraiment",
+      "angle": "épaisseur, matière, taille, pour qui",
+      "category": "Bien-être au travail"
+    },
+    {
+      "titre": "Lampe de bureau LED : température de couleur et intensité expliquées",
+      "angle": "kelvins, lumens, réglages, position sur le bureau",
+      "category": "Éclairage"
+    },
+    {
+      "titre": "Anneau lumineux et éclairage pour visioconférence : bien paraître à l'écran",
+      "angle": "placement, taille, lumière douce, éviter les reflets sur lunettes",
+      "category": "Éclairage"
+    },
+    {
+      "titre": "Écran incurvé ou plat pour le travail de bureau",
+      "angle": "immersion, lecture de tableaux, fatigue visuelle, place sur le bureau",
+      "category": "Écrans et informatique"
+    },
+    {
+      "titre": "Station d'accueil USB-C : brancher tout son bureau d'un seul câble",
+      "angle": "ports, alimentation, compatibilité, pièges courants",
+      "category": "Écrans et informatique"
+    },
+    {
+      "titre": "Isolation phonique du coin bureau : réduire le bruit sans travaux",
+      "angle": "panneaux acoustiques, rideaux, casque, organisation",
+      "category": "Aménagement"
+    },
+    {
+      "titre": "Rangement de bureau : garder un espace de travail clair",
+      "angle": "caissons, organisateurs, gestion des câbles",
+      "category": "Aménagement"
+    },
+    {
+      "titre": "Gestion des câbles : un bureau propre en une heure",
+      "angle": "goulottes, passe-câbles, multiprises fixées, méthode",
+      "category": "Aménagement"
+    },
+    {
+      "titre": "Casque à réduction de bruit pour se concentrer en open space familial",
+      "angle": "réduction active ou passive, confort longue durée, autonomie",
+      "category": "Audio et visioconférence"
+    },
+    {
+      "titre": "Pauses actives et étirements au bureau : une routine simple",
+      "angle": "fréquence, exercices sans matériel, rappels",
+      "category": "Bien-être au travail"
+    },
+    {
+      "titre": "Plantes de bureau : lesquelles survivent à un coin sombre",
+      "angle": "entretien minimal, lumière faible, bénéfices perçus",
+      "category": "Aménagement"
+    },
+    {
+      "titre": "Chauffage d'appoint pour bureau à domicile : chauffer une seule pièce sans exploser la facture",
+      "angle": "types d'appareils, sécurité, consommation",
+      "category": "Bien-être au travail"
+    },
+    {
+      "titre": "Purificateur d'air et bureau à domicile : utile ou superflu ?",
+      "angle": "cas d'usage, bruit, filtres, coût d'entretien",
+      "category": "Bien-être au travail"
+    },
+    {
+      "titre": "Deuxième écran portable : travailler à deux écrans partout",
+      "angle": "taille, alimentation USB-C, poids, qualité d'image",
+      "category": "Écrans et informatique"
+    },
+    {
+      "titre": "Imprimante pour la maison : en a-t-on encore besoin en télétravail ?",
+      "angle": "jet d'encre ou laser, coût à la page, alternatives",
+      "category": "Écrans et informatique"
+    },
+    {
+      "titre": "Onduleur et protection électrique pour son matériel de travail",
+      "angle": "coupures, surtensions, dimensionnement",
+      "category": "Écrans et informatique"
+    },
+    {
+      "titre": "Coussin lombaire et coussin d'assise : améliorer une chaise existante",
+      "angle": "quand ça suffit, quand il faut changer de chaise",
+      "category": "Chaises et sièges"
+    },
+    {
+      "titre": "Hauteur de bureau idéale : la régler selon sa taille",
+      "angle": "méthode simple, bureau fixe ou réglable, erreurs courantes",
+      "category": "Bureaux"
+    },
+    {
+      "titre": "Télétravailler depuis la table de la cuisine : les ajustements qui changent tout",
+      "angle": "solutions temporaires, posture, rangement du soir",
+      "category": "Aménagement"
+    },
+    {
+      "titre": "Tableau blanc, planning mural et organisation visuelle du bureau",
+      "angle": "formats, aimanté ou effaçable, usages",
+      "category": "Accessoires"
+    }
   ],
-  "publies": []
+  "publies": [
+    {
+      "titre": "Repose-pieds de bureau : utile ou gadget ?",
+      "angle": "quand il aide vraiment, hauteur et inclinaison, pour qui",
+      "category": "Accessoires",
+      "publie_le": "2026-10-24",
+      "fichier": "2026-10-24-repose-pieds-de-bureau-utile-ou-gadget-le-guide-pour-bien-choisir.md"
+    }
+  ]
 }
