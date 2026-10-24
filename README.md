@@ -64,6 +64,16 @@ D'autres programmes paient parfois mieux sur le mobilier de bureau (marques en d
 
 Le choix de liens de **recherche** plutôt que de produits précis est volontaire : les produits disparaissent, les recherches restent valides, et le robot rédacteur ne peut pas inventer de référence inexistante.
 
+## Publicité Google AdSense
+
+Désactivée par défaut. Pour l'activer, mets ton identifiant éditeur dans `config.json` :
+
+```json
+"adsense_client": "ca-pub-1234567890123456"
+```
+
+Le générateur ajoute alors le script AdSense dans l'en-tête de chaque page, le fichier `ads.txt` à la racine et un lien « Paramètres de confidentialité » en pied de page. Les annonces et le bandeau de consentement RGPD sont gérés depuis le compte AdSense (Annonces automatiques et Confidentialité et messages), sans modifier le site. Pour tout couper, remets la valeur à `""`.
+
 ## Travailler en local
 
 ```bash

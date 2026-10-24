@@ -65,6 +65,31 @@ git push
 
 Neuf illustrations (une par catégorie + accueil) dans `static/img/`. Pour en changer une, remplace le fichier JPG du même nom. Pour une image propre à un article, ajoute `image: static/img/mon-image.jpg` dans son en-tête. Les originaux sont dans ton Canva (« Support d'illustrations vierge »).
 
+## 8. Bing Webmaster Tools — 3 min, facultatif
+
+- [ ] Va sur https://www.bing.com/webmasters et connecte-toi (compte Microsoft, Google ou Facebook).
+- [ ] Choisis **Importer depuis Google Search Console**, autorise l'accès, coche la propriété `https://teletravail.logroot.fr/` → Importer. Le sitemap est repris automatiquement.
+- [ ] Si tu préfères l'ajout manuel : « Ajouter votre site manuellement », puis vérification par **balise meta** : colle-moi la balise et je l'insère comme pour Google.
+
+## 9. Publicité Google AdSense — à faire quand le site aura du trafic (compter 3 à 6 mois)
+
+Le site est déjà prêt : il suffira de remplir `adsense_client` dans `config.json`. Pourquoi attendre : Google refuse presque toujours un site de moins de quelques mois ou sans visites, et une publicité sur un site vide ne rapporte rien tout en gênant les clics Amazon.
+
+- [ ] Inscription sur https://www.google.com/adsense avec ton compte Google, adresse du site `teletravail.logroot.fr`, pays France.
+- [ ] AdSense te donne un identifiant de la forme `ca-pub-1234567890123456`. Donne-le-moi (ou mets-le dans `config.json`, ligne `adsense_client`, puis commit et push). Le site ajoute alors le script Google et le fichier `ads.txt` tout seul.
+- [ ] Dans AdSense : **Confidentialité et messages → Message RGPD** : crée le message avec les réglages par défaut et publie-le. C'est le bandeau de consentement obligatoire en Europe ; Google l'affiche lui-même, rien à coder.
+- [ ] Dans AdSense : **Annonces → Par site → Modifier** : active les **Annonces automatiques**, puis valide. Google place et dose les annonces lui-même.
+- [ ] Attends la validation (quelques jours à deux semaines). AdSense verse à partir de 70 € cumulés.
+
+## 10. Faire connaître le site (gratuit, bien plus rentable que la pub payante)
+
+- [ ] **Pinterest** : crée un compte, un tableau « Bureau à domicile », et épingle chaque article avec son illustration. Les sujets maison et bureau y marchent très bien et le trafic dure des mois.
+- [ ] **LinkedIn** : un post par mois sur un conseil télétravail avec le lien de l'article. Public exactement ciblé.
+- [ ] **Forums et groupes** : groupes Facebook « télétravail », Reddit r/france ou r/vosfinances quand un article répond vraiment à une question posée. Jamais de lien à froid.
+- [ ] **Les trois ventes Amazon** : envoie le lien d'un article à trois ou quatre collègues qui s'équipent.
+
+Publicité payante (Google Ads, Meta Ads) : déconseillée pour ce site. Un clic coûte 0,30 à 1 € ; une commission Amazon rapporte en moyenne 0,05 à 0,30 € par clic. Tu perdrais de l'argent à chaque visiteur acheté.
+
 ## Facultatif, plus tard
 
 - **Un nom de domaine** (environ 10 €/an, par exemple `coin-teletravail.fr`) améliore la crédibilité et le référencement. Dans `config.json`, mets `"url": "https://coin-teletravail.fr"` ; le fichier `CNAME` est généré automatiquement. Chez ton registrar, ajoute un enregistrement CNAME `www` ou les 4 enregistrements A de GitHub Pages (voir la doc GitHub « Managing a custom domain »).

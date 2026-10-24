@@ -14,6 +14,10 @@ L'hébergeur (GitHub Pages) peut conserver des journaux techniques (adresse IP, 
 
 Certains boutons et liens renvoient vers Amazon.fr avec un identifiant de partenaire. Lorsque vous cliquez sur un tel lien, **Amazon** dépose un cookie sur votre navigateur pour attribuer vos éventuels achats à ce site pendant une durée limitée. Ce traitement est réalisé par Amazon, selon sa propre politique de confidentialité, que vous pouvez consulter sur son site. Nous ne recevons de la part d'Amazon aucune donnée permettant de vous identifier : seulement des statistiques agrégées (nombre de clics, nombre de commandes, catégories de produits).
 
+## Publicité
+
+Le site peut afficher des annonces diffusées par Google AdSense. Dans ce cas, un bandeau vous demande votre consentement avant tout dépôt de cookie publicitaire, conformément au RGPD et aux recommandations de la CNIL. Sans votre accord, Google n'affiche que des annonces non personnalisées, qui ne reposent pas sur votre historique de navigation. Vous pouvez modifier votre choix à tout moment via le lien « Paramètres de confidentialité » en pied de page lorsque la publicité est active. Pour en savoir plus sur l'utilisation des données par Google : https://policies.google.com/technologies/partner-sites
+
 ## Courriels
 
 Si vous nous écrivez, votre adresse et le contenu de votre message sont utilisés uniquement pour vous répondre. Ils ne sont ni cédés ni utilisés à d'autres fins.

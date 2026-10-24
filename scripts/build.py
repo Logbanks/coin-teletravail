@@ -239,9 +239,15 @@ def card_html(article: dict, featured: bool = False) -> str:
 def page_shell(base: str, *, title: str, description: str, canonical: str, content: str,
                nav: str, og_type: str = "website", json_ld: str = "", image: str = "") -> str:
     og_image = f'<meta property="og:image" content="{esc(SITE_URL + image[len(BASE_PATH):])}">' if image else ""
+    adsense = ""
+    if CONFIG.get("adsense_client"):
+        adsense = (f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
+                   f'?client={esc(CONFIG["adsense_client"])}" crossorigin="anonymous"></script>')
     return render(
         base,
         og_image=og_image,
+        adsense=adsense,
+        privacy_link=(' · <a href="#" onclick="if(window.googlefc){googlefc.showRevocationMessage();}return false;">Paramètres de confidentialité</a>' if adsense else ""),
         title=esc(title),
         description=esc(description),
         canonical=esc(canonical),
@@ -278,6 +284,11 @@ def build() -> None:
         for f in racine.iterdir():
             if f.is_file():
                 shutil.copy2(f, DIST / f.name)
+
+    # Fichier ads.txt exigé par Google AdSense (identifiant éditeur = partie après "ca-")
+    if CONFIG.get("adsense_client"):
+        pub = CONFIG["adsense_client"].removeprefix("ca-")
+        (DIST / "ads.txt").write_text(f"google.com, {pub}, DIRECT, f08c47fec0942fa0" + chr(10), encoding="utf-8")
 
     host = urllib.parse.urlparse(SITE_URL).hostname or ""
     if host and not host.endswith("github.io"):
