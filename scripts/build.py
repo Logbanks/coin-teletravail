@@ -117,7 +117,7 @@ def product_card(match: re.Match) -> str:
         if "=" in f:
             k, _, v = f.partition("=")
             opts[k.strip().lower()] = v.strip()
-    link = amazon_link(search=opts.get("recherche", title), asin=opts.get("asin", ""))
+    link = opts.get("lien") or amazon_link(search=opts.get("recherche", title), asin=opts.get("asin", ""))
     price = f'<p class="product-price">Budget indicatif : {esc(opts["prix"])}</p>' if opts.get("prix") else ""
     note = f'<p class="product-note">{esc(opts["note"])}</p>' if opts.get("note") else ""
     return (
@@ -135,6 +135,9 @@ def convert_markdown(text: str) -> tuple[str, str]:
     MD.reset()
     body = MD.convert(text)
     toc = getattr(MD, "toc", "") or ""
+    # Tout lien Markdown vers Amazon devient un lien sponsorisé, ouvert dans un nouvel onglet.
+    body = re.sub(r'<a href="(https?://(?:www\.)?amazon\.[a-z.]+/[^"]*)">',
+                  r'<a href="" rel="sponsored nofollow noopener" target="_blank">', body)
     # Liens internes écrits « /mon-article/ » : préfixe du chemin de base.
     if BASE_PATH:
         body = re.sub(r'href="/(?!/)', f'href="{BASE_PATH}/', body)
@@ -144,6 +147,24 @@ def convert_markdown(text: str) -> tuple[str, str]:
 # ---------------------------------------------------------------------------
 # Chargement du contenu
 # ---------------------------------------------------------------------------
+
+IMG_DIR = STATIC / "img"
+
+
+def category_image(category_slug: str) -> str:
+    """Chemin public de l'illustration d'une catégorie, ou chaîne vide."""
+    for ext in ("jpg", "png", "webp"):
+        if (IMG_DIR / "categories" / f"{category_slug}.{ext}").exists():
+            return f"{BASE_PATH}/static/img/categories/{category_slug}.{ext}"
+    return ""
+
+
+def hero_image() -> str:
+    for ext in ("jpg", "png", "webp"):
+        if (IMG_DIR / f"accueil.{ext}").exists():
+            return f"{BASE_PATH}/static/img/accueil.{ext}"
+    return ""
+
 
 def load_articles() -> list[dict]:
     articles = []
@@ -169,6 +190,7 @@ def load_articles() -> list[dict]:
             "path": f"{BASE_PATH}/{slug}/",
             "html": html_body,
             "toc": toc,
+            "image": (f"{BASE_PATH}/{meta['image'].lstrip('/')}" if meta.get("image") else category_image(slugify(category))),
         })
     articles.sort(key=lambda a: (a["date"], a["title"]), reverse=True)
     return articles
@@ -204,19 +226,22 @@ def nav_html(categories: list[tuple[str, str]], active: str = "") -> str:
 
 def card_html(article: dict, featured: bool = False) -> str:
     cls = "card featured" if featured else "card"
+    img = f'<a class="card-img" href="{article["path"]}" aria-hidden="true" tabindex="-1"><img src="{article["image"]}" alt="" loading="lazy"></a>\n' if article["image"] else ""
     return (
-        f'<li class="{cls}">\n'
+        f'<li class="{cls}">\n{img}<div class="card-body">\n'
         f'  <p class="meta"><a href="{BASE_PATH}/categorie/{article["category_slug"]}/">{esc(article["category"])}</a> · {fmt_date(article["date"])}</p>\n'
         f'  <h2 class="card-title"><a href="{article["path"]}">{esc(article["title"])}</a></h2>\n'
         f'  <p>{esc(article["description"])}</p>\n'
-        "</li>"
+        "</div></li>"
     )
 
 
 def page_shell(base: str, *, title: str, description: str, canonical: str, content: str,
-               nav: str, og_type: str = "website", json_ld: str = "") -> str:
+               nav: str, og_type: str = "website", json_ld: str = "", image: str = "") -> str:
+    og_image = f'<meta property="og:image" content="{esc(SITE_URL + image[len(BASE_PATH):])}">' if image else ""
     return render(
         base,
+        og_image=og_image,
         title=esc(title),
         description=esc(description),
         canonical=esc(canonical),
@@ -271,10 +296,15 @@ def build() -> None:
     # --- Accueil ---------------------------------------------------------
     home_articles = articles[: CONFIG.get("articles_on_home", 12)]
     cards = "\n".join(card_html(a, featured=(i == 0)) for i, a in enumerate(home_articles))
+    hero = hero_image()
+    hero_img = f'<img class="hero-img" src="{hero}" alt="Un coin bureau à domicile bien aménagé" width="1776" height="896">' if hero else ""
     home = (
-        '<section class="hero">\n'
-        f'  <h1>{esc(CONFIG["tagline"])}</h1>\n'
-        f'  <p>{esc(CONFIG["description"])}</p>\n'
+        f'<section class="hero{" hero-with-img" if hero else ""}">\n'
+        '  <div class="hero-text">\n'
+        f'    <h1>{esc(CONFIG["tagline"])}</h1>\n'
+        f'    <p>{esc(CONFIG["description"])}</p>\n'
+        "  </div>\n"
+        f"  {hero_img}\n"
         "</section>\n"
         f'<ul class="card-list">\n{cards}\n</ul>'
     )
@@ -286,7 +316,7 @@ def build() -> None:
     }, ensure_ascii=False)
     write(DIST / "index.html", page_shell(
         base, title=f'{CONFIG["site_name"]} — {CONFIG["tagline"]}', description=CONFIG["description"],
-        canonical=SITE_URL + "/", content=home, nav=nav,
+        canonical=SITE_URL + "/", content=home, nav=nav, image=hero,
         json_ld=f'<script type="application/ld+json">{site_ld}</script>',
     ))
 
@@ -302,11 +332,14 @@ def build() -> None:
     for name, slug in cat_list:
         cat_articles = [a for a in articles if a["category_slug"] == slug]
         cards = "\n".join(card_html(a) for a in cat_articles)
+        cat_img = category_image(slug)
+        cat_banner = f'<img class="hero-img" src="{cat_img}" alt="" width="1536" height="1024">' if cat_img else ""
+        n = len(cat_articles)
         write(DIST / "categorie" / slug / "index.html", page_shell(
             base, title=f'{name} — {CONFIG["site_name"]}',
             description=f'Tous nos guides et conseils dans la rubrique {name}.',
-            canonical=f"{SITE_URL}/categorie/{slug}/", nav=nav_html(cat_list, active=slug),
-            content=f'<section class="hero"><h1>{esc(name)}</h1></section>\n<ul class="card-list">\n{cards}\n</ul>',
+            canonical=f"{SITE_URL}/categorie/{slug}/", nav=nav_html(cat_list, active=slug), image=cat_img,
+            content=f'<section class="hero{" hero-with-img" if cat_img else ""}"><div class="hero-text"><h1>{esc(name)}</h1><p>{n} article{"s" if n > 1 else ""}</p></div>{cat_banner}</section>\n<ul class="card-list">\n{cards}\n</ul>',
         ))
 
     # --- Articles ---------------------------------------------------------
@@ -333,6 +366,8 @@ def build() -> None:
             f'    <h1>{esc(a["title"])}</h1>\n'
             f'    <p class="lead">{esc(a["description"])}</p>\n'
             "  </header>\n"
+            + (f'  <img class="article-img" src="{a["image"]}" alt="" width="1536" height="1024">\n' if a["image"] else "")
+            +
             '  <p class="notice">Cet article contient des liens d\'affiliation Amazon. Si vous achetez via ces liens, le site touche une petite commission, sans surcoût pour vous. Nos conseils restent indépendants.</p>\n'
             f'  <div class="article-body">\n{a["html"]}\n  </div>\n'
             f"  {related_html}\n"
@@ -340,7 +375,7 @@ def build() -> None:
         )
         write(DIST / a["slug"] / "index.html", page_shell(
             base, title=f'{a["title"]} — {CONFIG["site_name"]}', description=a["description"],
-            canonical=a["url"], nav=nav_html(cat_list, active=a["category_slug"]), content=content,
+            canonical=a["url"], nav=nav_html(cat_list, active=a["category_slug"]), content=content, image=a["image"],
             og_type="article", json_ld=f'<script type="application/ld+json">{article_ld}</script>',
         ))
 

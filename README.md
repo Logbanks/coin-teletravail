@@ -20,7 +20,11 @@ config.json + templates/ + static/ ──▶ scripts/build.py ──▶ dist/ �
 - **`scripts/generate_article.py`** : prend le premier sujet de la file, demande à Claude de rédiger l'article selon la ligne éditoriale du site, l'enregistre, met à jour la file. Si la file est vide, il demande dix nouveaux sujets.
 - **`.github/workflows/publier.yml`** : chaque lundi, rédige un article, le commite, reconstruit et déploie. À chaque push, reconstruit et déploie seulement.
 
-## Fiches produit et liens d'affiliation
+## Fiches produit et liens d'affiliation (« liens sponsorisés »)
+
+Il y a trois façons de placer un lien qui te rapporte une commission.
+
+### 1. La fiche produit (recommandé)
 
 Dans un article, cette ligne :
 
@@ -29,6 +33,34 @@ Dans un article, cette ligne :
 ```
 
 devient une fiche avec un bouton vers la recherche Amazon correspondante, portant ton identifiant partenaire (`amazon_tag` dans `config.json`). Pour pointer vers un produit précis, ajoute `asin=B0XXXXXXXX`. Les liens portent `rel="sponsored nofollow"` comme le demandent Google et Amazon.
+
+### 2. Un produit précis (avec son ASIN)
+
+Sur la page Amazon d'un produit, l'ASIN est le code à 10 caractères dans l'adresse (`amazon.fr/dp/B0XXXXXXXX`) ou dans la section « Informations sur le produit ». Ajoute `asin=` dans la fiche :
+
+```
+[[produit: Lampe de bureau à bras articulé | asin=B0XXXXXXXX | prix=40 à 60 € | note=Le modèle que nous utilisons.]]
+```
+
+Le bouton pointe alors directement sur ce produit, avec ton identifiant. Utilise-le avec parcimonie : un produit retiré du catalogue donne un lien mort, alors qu'une recherche reste toujours valide.
+
+### 3. Un lien dans le texte
+
+Pour un simple lien dans une phrase, écris un lien Markdown vers une recherche ou un produit Amazon en ajoutant `?tag=cointeletrava-21` à la fin :
+
+```
+...un [support pour ordinateur portable](https://www.amazon.fr/s?k=support+ordinateur+portable&tag=cointeletrava-21) suffit.
+```
+
+Le générateur ajoute automatiquement `rel="sponsored nofollow"` à tout lien vers amazon.fr, comme l'exigent Google et Amazon.
+
+### Suivre les résultats
+
+Le tableau de bord https://partenaires.amazon.fr indique les clics, les commandes et les commissions par jour. Les commissions sont versées environ 60 jours après la fin du mois, à partir de 25 € cumulés.
+
+### Hors Amazon
+
+D'autres programmes paient parfois mieux sur le mobilier de bureau (marques en direct via Awin, Effiliation, ou les programmes propres des enseignes). Ils demandent chacun une inscription. Si tu en ajoutes un, remplace simplement le lien du bouton dans la fiche produit par `lien=https://...` : le générateur l'utilisera à la place du lien Amazon.
 
 Le choix de liens de **recherche** plutôt que de produits précis est volontaire : les produits disparaissent, les recherches restent valides, et le robot rédacteur ne peut pas inventer de référence inexistante.
 
