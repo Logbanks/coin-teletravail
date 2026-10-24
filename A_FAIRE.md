@@ -20,14 +20,14 @@ git push -u origin main
 - [x] Onglet **Actions** du dépôt : si un message demande d'activer les workflows, clique sur « I understand… enable them ».
 - [x] Attends deux minutes : le site est visible sur `https://TON-IDENTIFIANT.github.io/coin-teletravail/`.
 
-## 2. Activer la rédaction automatique hebdomadaire — 10 min
+## 2. Activer la rédaction automatique hebdomadaire — FAIT le 24/10/2026 (premier article de test publié)
 
-- [ ] Crée un compte sur https://console.anthropic.com, ajoute un moyen de paiement et génère une **clé API**.
+- [x] Crée un compte sur https://console.anthropic.com, ajoute un moyen de paiement et génère une **clé API**.
       Coût estimé : un article par semaine, quelques dizaines de centimes à un euro par article, soit quelques euros par mois.
       Tu peux fixer un plafond mensuel de dépense dans la console pour ne jamais être surpris.
-- [ ] Sur GitHub, dans le dépôt : **Settings → Secrets and variables → Actions → New repository secret**.
+- [x] Sur GitHub, dans le dépôt : **Settings → Secrets and variables → Actions → New repository secret**.
       Nom : `ANTHROPIC_API_KEY` — Valeur : ta clé. Ne la colle nulle part ailleurs.
-- [ ] Test : onglet **Actions → Publier le site → Run workflow**, laisse la case « Rédiger un nouvel article » cochée, lance.
+- [x] Test : onglet **Actions → Publier le site → Run workflow**, laisse la case « Rédiger un nouvel article » cochée, lance.
       Trois minutes plus tard, un nouvel article apparaît sur le site. Ensuite, c'est tous les lundis à 8 h (heure française, 6 h UTC).
 
 ## 3. Gagner de l'argent : le Partenariat Amazon — 20 min
