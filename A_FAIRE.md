@@ -42,7 +42,7 @@ git push
 ```
 
 - [ ] **Important** : Amazon exige **trois ventes dans les 180 jours** suivant l'inscription pour valider le compte, sinon il est fermé (tu peux te réinscrire). Partage les articles autour de toi au lancement pour passer ce cap.
-- [ ] Amazon vérifie aussi que la mention « En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises » figure sur le site : elle est déjà dans le pied de page de chaque page.
+- [x] Amazon vérifie aussi que la mention « En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises » figure sur le site : elle est déjà dans le pied de page de chaque page.
 
 ## 4. Être trouvé sur Google — FAIT le 24/10/2026 (propriété vérifiée, sitemap envoyé ; Google peut mettre 1 à 2 jours à le lire)
 
@@ -53,7 +53,7 @@ git push
 ## 5. Les mentions légales — FAIT le 24/10/2026 (éditeur anonyme, hébergeur GitHub, contact@logroot.fr)
 
 - [x] Mentions légales rédigées en mode anonyme (particulier non professionnel, coordonnées détenues par l'hébergeur).
-- [ ] Remplacer `contact@logroot.fr` dans `content/pages/mentions-legales.md` et `config.json` par une adresse que tu consultes.
+- [x] Adresse de contact en place : contact@logroot.fr.
 - [x] Commit et push.
 
 ## 6. Domaine personnalisé — FAIT le 24/10/2026 : https://teletravail.logroot.fr (HTTPS forcé, ancienne adresse redirigée)
