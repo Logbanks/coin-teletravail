@@ -90,43 +90,18 @@ Le site est déjà prêt : il suffira de remplir `adsense_client` dans `config.j
 
 Publicité payante (Google Ads, Meta Ads) : déconseillée pour ce site. Un clic coûte 0,30 à 1 € ; une commission Amazon rapporte en moyenne 0,05 à 0,30 € par clic. Tu perdrais de l'argent à chaque visiteur acheté.
 
-## 11. Publication automatique LinkedIn et Pinterest — 30 min, une seule fois
+## 11. Publication automatique LinkedIn et Pinterest — FAIT le 24/10/2026
 
-Le site publie deux flux prêts à poster, mis à jour à chaque nouvel article :
+Deux scénarios Make (make.com, plan gratuit) lisent chaque jour les flux du site et publient :
 
-- `https://teletravail.logroot.fr/feed-linkedin.xml` : le texte du post LinkedIn (accroche, trois conseils, hashtags, lien) dans le champ *description*.
-- `https://teletravail.logroot.fr/feed-pinterest.xml` : le titre, la description de l'épingle, le lien et l'image dans le champ *enclosure*.
+| Scénario | Flux lu | Modules | Horaire | Point de départ |
+|---|---|---|---|---|
+| LinkedIn | `feed-linkedin.xml` | RSS → HTTP « Download a file » (image) → LinkedIn « Create a User Text Post », Media Type **Article** (URL, Title, Thumbnail = fichier HTTP) | tous les jours 9 h 00 | From now on |
+| Pinterest | `feed-pinterest.xml` | RSS → Pinterest « Create a Pin » (Image URL = Enclosures[] URL, Board, Pin Name = Title, Description, Link = URL) | tous les jours 9 h 30 | All (épingle un article existant par jour, puis les nouveaux) |
 
-Le robot rédige ces textes en même temps que chaque article. Il manque un service qui lit le flux et poste : **Make** (make.com), gratuit jusqu'à 1 000 opérations par mois, ce qui couvre largement un article par semaine. Avantage décisif : Make gère lui-même les connexions LinkedIn et Pinterest, donc aucune clé API à créer ni aucun jeton à renouveler.
+Le texte LinkedIn et la description Pinterest de chaque article sont rédigés par le robot (champs `linkedin:` et `pinterest:` de l'en-tête). Le lien de l'article est porté par la carte LinkedIn, il n'est plus répété dans le texte.
 
-### Préparer les comptes (10 min)
-
-- [ ] **Pinterest** : si tu n'as qu'un compte personnel, convertis-le en compte professionnel (Paramètres → Gestion du compte → Convertir en compte professionnel, gratuit), puis crée un tableau nommé par exemple « Bureau à domicile et télétravail ».
-- [ ] **LinkedIn** : rien à préparer, ton profil personnel suffit. Si tu préfères publier au nom du site plutôt qu'au tien, crée une Page LinkedIn « Le Coin Télétravail » (gratuit, 3 min) : Make peut publier sur l'un ou l'autre.
-- [ ] **Make** : crée un compte sur https://www.make.com (plan Free).
-
-### Scénario 1 : LinkedIn (10 min)
-
-- [ ] Dans Make : **Create a new scenario**.
-- [ ] Premier module : cherche **RSS** → **Watch RSS feed items**. URL : `https://teletravail.logroot.fr/feed-linkedin.xml`. Maximum number of returned items : 1. Clique OK, puis dans la fenêtre « Choose where to start », choisis **From now on** (sinon les huit articles existants partiraient d'un coup).
-- [ ] Deuxième module (clique sur le + à droite) : cherche **LinkedIn** → **Create a User Text Post** (ou **Create an Organization Text Post** pour une Page). Clique **Add** pour connecter ton compte LinkedIn et autorise Make.
-- [ ] Dans le champ **Text** (ou Commentary), insère la variable **Description** du module RSS. Visibilité : Public.
-- [ ] En bas à gauche, l'horloge **Schedule** : **Every day** à 09:00. Enregistre et active le scénario (interrupteur **ON**).
-
-### Scénario 2 : Pinterest (10 min)
-
-- [ ] Nouveau scénario. Premier module **RSS → Watch RSS feed items**, URL `https://teletravail.logroot.fr/feed-pinterest.xml`, maximum 1, **From now on**.
-- [ ] Deuxième module : **Pinterest → Create a Pin**. Connecte ton compte Pinterest professionnel.
-- [ ] Board : choisis ton tableau. Title : variable **Title** du RSS. Description : variable **Description**. Link : variable **URL**. Image URL : ouvre **Enclosures** et choisis l'**URL** de l'enclosure (image source : URL).
-- [ ] Schedule : **Every day** à 09:30. Enregistre et active.
-
-### Tester sans attendre lundi
-
-- [ ] Dans chaque scénario, clique sur **Run once** après avoir réglé le module RSS sur **All** items avec maximum 1 : cela publie le dernier article. Remets ensuite le module sur **From now on**. Vérifie le post sur LinkedIn et l'épingle sur Pinterest.
-
-Ensuite, chaque lundi : le robot publie l'article à 8 h, Make poste sur LinkedIn à 9 h et sur Pinterest à 9 h 30. Si Make change le nom d'un module, cherche l'équivalent « créer un post » ou « créer une épingle » : les champs à remplir restent les mêmes.
-
-Alternative si tu préfères Zapier (100 tâches par mois gratuites) : même logique, un Zap « RSS by Zapier → LinkedIn » et un Zap « RSS by Zapier → Pinterest ».
+Entretien : aucun. Si Make affiche un scénario en erreur (mail de Make), c'est en général la connexion LinkedIn ou Pinterest à renouveler : ouvrir le module, cliquer sur la connexion, « Reauthorize ».
 
 ## Facultatif, plus tard
 
