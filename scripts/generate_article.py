@@ -144,11 +144,18 @@ def propose_topics(client: anthropic.Anthropic, done_titles: list[str]) -> list[
 
 def main() -> int:
     dry_run = "--dry-run" in sys.argv
-    if not os.environ.get("ANTHROPIC_API_KEY"):
+    # On nettoie la clé : un retour à la ligne, un espace ou des guillemets copiés
+    # avec elle dans le secret GitHub rendent l'en-tête HTTP invalide.
+    api_key = os.environ.get("ANTHROPIC_API_KEY", "").strip().strip('"').strip("'").strip()
+    if not api_key:
         print("ANTHROPIC_API_KEY manquante : impossible de générer un article.", file=sys.stderr)
         return 2
+    if not api_key.startswith("sk-ant-") or any(c.isspace() for c in api_key):
+        print("ANTHROPIC_API_KEY mal formée : elle doit commencer par sk-ant- et ne contenir aucun espace. "
+              "Recréez le secret en collant la clé seule.", file=sys.stderr)
+        return 2
 
-    client = anthropic.Anthropic()
+    client = anthropic.Anthropic(api_key=api_key)
     topics = json.loads(TOPICS_FILE.read_text(encoding="utf-8"))
     topics.setdefault("a_faire", [])
     topics.setdefault("publies", [])
