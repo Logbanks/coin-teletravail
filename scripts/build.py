@@ -247,6 +247,12 @@ def build() -> None:
     DIST.mkdir(parents=True, exist_ok=True)
     shutil.copytree(STATIC, DIST / "static", dirs_exist_ok=True)
     (DIST / ".nojekyll").write_text("", encoding="utf-8")
+    # Fichiers à servir tels quels à la racine du site (vérifications Google, Bing, etc.)
+    racine = ROOT / "racine"
+    if racine.is_dir():
+        for f in racine.iterdir():
+            if f.is_file():
+                shutil.copy2(f, DIST / f.name)
 
     host = urllib.parse.urlparse(SITE_URL).hostname or ""
     if host and not host.endswith("github.io"):
