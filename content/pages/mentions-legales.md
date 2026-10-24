@@ -10,7 +10,7 @@ Le Coin Télétravail est un site personnel, édité à titre non professionnel 
 
 Conformément à l'article 6, III, 2 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, l'éditeur a choisi de ne pas publier son identité. Ses coordonnées ont été communiquées à l'hébergeur, qui les tient à la disposition des autorités judiciaires sur demande.
 
-Pour toute question, remarque ou demande de retrait, vous pouvez écrire à : **contact@exemple.fr**.
+Pour toute question, remarque ou demande de retrait, vous pouvez écrire à : **contact@logroot.fr**.
 
 ## Hébergement
 

@@ -1,6 +1,6 @@
 # Ce qui te reste à faire (une seule fois, environ une heure)
 
-Tout le reste est automatique. Coche au fur et à mesure.
+**Les cinq étapes ont été faites le 24 octobre 2026. Le site tourne seul.** Il reste une seule chose à surveiller : obtenir trois ventes Amazon avant le 22 avril 2027 (180 jours), sinon Amazon ferme le compte partenaire et il faudra se réinscrire.
 
 ## 1. Mettre le site en ligne gratuitement (GitHub Pages) — FAIT le 24/10/2026 : https://logbanks.github.io/coin-teletravail/
 
@@ -50,11 +50,11 @@ git push
 - [x] Dans Search Console : **Sitemaps** → ajoute `sitemap.xml`.
 - [ ] Même chose, facultatif, sur https://www.bing.com/webmasters (on peut importer directement depuis Search Console).
 
-## 5. Les mentions légales — éditeur anonyme + hébergeur en place le 24/10/2026 ; reste l'adresse e-mail de contact
+## 5. Les mentions légales — FAIT le 24/10/2026 (éditeur anonyme, hébergeur GitHub, contact@logroot.fr)
 
 - [x] Mentions légales rédigées en mode anonyme (particulier non professionnel, coordonnées détenues par l'hébergeur).
-- [ ] Remplacer `contact@exemple.fr` dans `content/pages/mentions-legales.md` et `config.json` par une adresse que tu consultes.
-- [ ] Commit et push.
+- [ ] Remplacer `contact@logroot.fr` dans `content/pages/mentions-legales.md` et `config.json` par une adresse que tu consultes.
+- [x] Commit et push.
 
 ## Facultatif, plus tard
 
