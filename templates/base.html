@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <link rel="canonical" href="{{canonical}}">
+  <meta property="og:type" content="{{og_type}}">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:url" content="{{canonical}}">
+  <meta property="og:site_name" content="{{site_name}}">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary">
+  <link rel="alternate" type="application/rss+xml" title="{{site_name}}" href="{{base}}/feed.xml">
+  <link rel="icon" href="{{base}}/static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="{{base}}/static/style.css">
+  {{json_ld}}
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="{{base}}/">
+        <span class="brand-mark" aria-hidden="true">▣</span>
+        <span class="brand-name">{{site_name}}</span>
+      </a>
+      <nav class="site-nav" aria-label="Catégories">
+        {{nav}}
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    {{content}}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="disclosure">En tant que Partenaire Amazon, ce site réalise un bénéfice sur les achats remplissant les conditions requises. Les liens marqués d'un pictogramme de panier sont des liens d'affiliation : ils ne changent rien au prix que vous payez.</p>
+      <p class="footer-links">
+        <a href="{{base}}/a-propos/">À propos</a> ·
+        <a href="{{base}}/mentions-legales/">Mentions légales</a> ·
+        <a href="{{base}}/politique-de-confidentialite/">Confidentialité</a> ·
+        <a href="{{base}}/feed.xml">Flux RSS</a>
+      </p>
+      <p class="copyright">© {{year}} {{site_name}}</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,70 @@
+# Ce qui te reste à faire (une seule fois, environ une heure)
+
+Tout le reste est automatique. Coche au fur et à mesure.
+
+## 1. Mettre le site en ligne gratuitement (GitHub Pages) — 15 min
+
+- [ ] Crée un compte sur https://github.com si tu n'en as pas (gratuit).
+- [ ] Crée un nouveau dépôt **public** nommé exactement `coin-teletravail` (sans README, sans licence, vide).
+- [ ] Dans `config.json`, remplace `VOTRE-IDENTIFIANT-GITHUB` par ton identifiant GitHub dans la ligne `"url"`.
+- [ ] Ouvre un terminal dans le dossier `coin-teletravail` et envoie le site (remplace TON-IDENTIFIANT) :
+
+```bash
+git add -A
+git commit -m "Lancement du site"
+git remote add origin https://github.com/TON-IDENTIFIANT/coin-teletravail.git
+git push -u origin main
+```
+
+- [ ] Sur GitHub, dans le dépôt : **Settings → Pages → Build and deployment → Source** : choisis **GitHub Actions**.
+- [ ] Onglet **Actions** du dépôt : si un message demande d'activer les workflows, clique sur « I understand… enable them ».
+- [ ] Attends deux minutes : le site est visible sur `https://TON-IDENTIFIANT.github.io/coin-teletravail/`.
+
+## 2. Activer la rédaction automatique hebdomadaire — 10 min
+
+- [ ] Crée un compte sur https://console.anthropic.com, ajoute un moyen de paiement et génère une **clé API**.
+      Coût estimé : un article par semaine, quelques dizaines de centimes à un euro par article, soit quelques euros par mois.
+      Tu peux fixer un plafond mensuel de dépense dans la console pour ne jamais être surpris.
+- [ ] Sur GitHub, dans le dépôt : **Settings → Secrets and variables → Actions → New repository secret**.
+      Nom : `ANTHROPIC_API_KEY` — Valeur : ta clé. Ne la colle nulle part ailleurs.
+- [ ] Test : onglet **Actions → Publier le site → Run workflow**, laisse la case « Rédiger un nouvel article » cochée, lance.
+      Trois minutes plus tard, un nouvel article apparaît sur le site. Ensuite, c'est tous les lundis à 8 h (heure française, 6 h UTC).
+
+## 3. Gagner de l'argent : le Partenariat Amazon — 20 min
+
+- [ ] Inscris-toi sur https://partenaires.amazon.fr avec l'adresse de ton site. Tu devras indiquer ton identité et tes coordonnées bancaires pour être payé.
+- [ ] Récupère ton **identifiant de partenaire** (il se termine par `-21`, par exemple `moncoin-21`).
+- [ ] Dans `config.json`, remplace `VOTRE-TAG-21` par cet identifiant, puis :
+
+```bash
+git commit -am "Identifiant partenaire Amazon"
+git push
+```
+
+- [ ] **Important** : Amazon exige **trois ventes dans les 180 jours** suivant l'inscription pour valider le compte, sinon il est fermé (tu peux te réinscrire). Partage les articles autour de toi au lancement pour passer ce cap.
+- [ ] Amazon vérifie aussi que la mention « En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises » figure sur le site : elle est déjà dans le pied de page de chaque page.
+
+## 4. Être trouvé sur Google — 10 min
+
+- [ ] Va sur https://search.google.com/search-console, ajoute la propriété « Préfixe d'URL » avec l'adresse de ton site, valide par balise HTML (colle la balise dans `templates/base.html` juste avant `</head>`, puis commit et push).
+- [ ] Dans Search Console : **Sitemaps** → ajoute `sitemap.xml`.
+- [ ] Même chose, facultatif, sur https://www.bing.com/webmasters (on peut importer directement depuis Search Console).
+
+## 5. Les mentions légales — 5 min
+
+- [ ] Ouvre `content/pages/mentions-legales.md` et remplace les « À COMPLÉTER » par ton nom et ton adresse (obligatoire en France pour un éditeur de site, même personnel). Remplace aussi `contact@exemple.fr` ici et dans `config.json` par une adresse que tu consultes.
+- [ ] Commit et push.
+
+## Facultatif, plus tard
+
+- **Un nom de domaine** (environ 10 €/an, par exemple `coin-teletravail.fr`) améliore la crédibilité et le référencement. Dans `config.json`, mets `"url": "https://coin-teletravail.fr"` ; le fichier `CNAME` est généré automatiquement. Chez ton registrar, ajoute un enregistrement CNAME `www` ou les 4 enregistrements A de GitHub Pages (voir la doc GitHub « Managing a custom domain »).
+- **Changer la fréquence** : dans `.github/workflows/publier.yml`, la ligne `cron: "0 6 * * 1"` = lundi 6 h UTC. Deux articles par semaine : `"0 6 * * 1,4"`.
+- **Ajouter des sujets** : complète la liste `a_faire` dans `topics.json`. Quand elle est vide, le robot invente lui-même dix nouveaux sujets.
+- **Relire** : tous les articles générés arrivent dans `content/articles/`. Tu peux en modifier ou en supprimer un, puis push : le site se reconstruit.
+
+## À quoi t'attendre, honnêtement
+
+- Mois 1 à 3 : quasiment aucun trafic, Google met du temps à faire confiance à un nouveau site. C'est normal.
+- Mois 4 à 12 : si le contenu est utile et régulier, le trafic monte progressivement. Un site de niche de ce type atteint typiquement quelques centaines à quelques milliers de visites par mois au bout d'un an.
+- Revenus : Amazon reverse entre 1 et 12 % selon la catégorie (le mobilier et l'informatique sont dans la fourchette basse à moyenne). Ordre de grandeur réaliste à un an : de quelques euros à quelques centaines d'euros par mois. Rien n'est garanti.
+- Le seul entretien : jeter un œil au site une fois par mois, et vérifier que la carte bancaire de la console Anthropic est valide.
