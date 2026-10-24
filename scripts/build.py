@@ -297,7 +297,7 @@ def build() -> None:
     home_articles = articles[: CONFIG.get("articles_on_home", 12)]
     cards = "\n".join(card_html(a, featured=(i == 0)) for i, a in enumerate(home_articles))
     hero = hero_image()
-    hero_img = f'<img class="hero-img" src="{hero}" alt="Un coin bureau à domicile bien aménagé" width="1776" height="896">' if hero else ""
+    hero_img = f'<img class="hero-img" src="{hero}" alt="Un coin bureau à domicile bien aménagé" width="576" height="288">' if hero else ""
     home = (
         f'<section class="hero{" hero-with-img" if hero else ""}">\n'
         '  <div class="hero-text">\n'
@@ -333,7 +333,7 @@ def build() -> None:
         cat_articles = [a for a in articles if a["category_slug"] == slug]
         cards = "\n".join(card_html(a) for a in cat_articles)
         cat_img = category_image(slug)
-        cat_banner = f'<img class="hero-img" src="{cat_img}" alt="" width="1536" height="1024">' if cat_img else ""
+        cat_banner = f'<img class="hero-img" src="{cat_img}" alt="" width="576" height="384">' if cat_img else ""
         n = len(cat_articles)
         write(DIST / "categorie" / slug / "index.html", page_shell(
             base, title=f'{name} — {CONFIG["site_name"]}',
@@ -366,7 +366,7 @@ def build() -> None:
             f'    <h1>{esc(a["title"])}</h1>\n'
             f'    <p class="lead">{esc(a["description"])}</p>\n'
             "  </header>\n"
-            + (f'  <img class="article-img" src="{a["image"]}" alt="" width="1536" height="1024">\n' if a["image"] else "")
+            + (f'  <img class="article-img" src="{a["image"]}" alt="" width="576" height="384">\n' if a["image"] else "")
             +
             '  <p class="notice">Cet article contient des liens d\'affiliation Amazon. Si vous achetez via ces liens, le site touche une petite commission, sans surcoût pour vous. Nos conseils restent indépendants.</p>\n'
             f'  <div class="article-body">\n{a["html"]}\n  </div>\n'
