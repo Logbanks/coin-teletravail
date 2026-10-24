@@ -3,6 +3,8 @@ title: Aménager un coin bureau dans un petit appartement : 9 solutions concrèt
 description: Pas de pièce dédiée ? Voici comment installer un vrai poste de télétravail dans un studio ou un deux-pièces, du bureau mural à la séparation visuelle.
 date: 2026-10-24
 category: Aménagement
+linkedin: Télétravailler sans pièce dédiée est la situation la plus courante en ville. Deux mètres carrés bien pensés suffisent pourtant à créer un vrai poste de travail.\n\nTrois idées qui changent tout :\n- un bureau mural rabattable qui disparaît le soir\n- un placard dont on retire les portes pour y glisser un plateau et une étagère\n- un paravent, un tapis ou un rideau pour séparer visuellement le coin travail\n\nNeuf solutions concrètes dans le guide, avec les trois éléments à ne jamais sacrifier, même dans un studio.\n\n#teletravail #amenagement #petitespace
+pinterest: Aménager un coin bureau dans un petit appartement : bureau mural rabattable, console étroite, secrétaire, placard transformé, séparation visuelle avec paravent ou rideau. Neuf idées concrètes pour installer un poste de télétravail confortable dans un studio ou un deux-pièces.
 ---
 
 Télétravailler sans pièce dédiée est la situation la plus courante en ville. On finit sur la table du salon, l'ordinateur à côté de l'assiette, et la frontière entre travail et vie privée s'efface. Pourtant, deux mètres carrés bien pensés suffisent à créer un poste confortable et à retrouver une coupure le soir.

@@ -100,6 +100,8 @@ title: Titre de l'article (60 à 70 caractères, avec le mot clé principal)
 description: Résumé de 140 à 160 caractères pour les moteurs de recherche
 date: {date}
 category: {category}
+linkedin: Texte d'un post LinkedIn sur UNE SEULE LIGNE (les sauts de ligne s'écrivent \\n). 500 à 900 caractères : une accroche concrète en une phrase, un saut de ligne, trois conseils courts tirés de l'article (un par ligne, commençant par un tiret), un saut de ligne, puis une phrase qui invite à lire le guide complet. Pas de lien (il est ajouté automatiquement), pas de hashtag dans le corps ; termine par trois hashtags maximum.
+pinterest: Description Pinterest sur une seule ligne, 150 à 400 caractères, phrases naturelles contenant les mots clés que les gens tapent (par exemple « bureau à domicile », « télétravail », le sujet de l'article), sans hashtag ni emoji.
 ---
 Corps de l'article en Markdown.
 """

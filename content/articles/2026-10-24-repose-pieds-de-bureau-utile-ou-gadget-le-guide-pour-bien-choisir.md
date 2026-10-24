@@ -3,6 +3,8 @@ title: Repose-pieds de bureau : utile ou gadget ? Le guide pour bien choisir
 description: Repose-pieds de bureau : dans quels cas il soulage vraiment, comment régler hauteur et inclinaison, et pour qui il est utile en télétravail.
 date: 2026-10-24
 category: Accessoires
+linkedin: Le repose-pieds a une réputation d'accessoire secondaire. Pour certaines personnes il est pourtant indispensable, pour d'autres il ne sert à rien.\n\nComment savoir dans quel cas vous êtes :\n- réglez d'abord la chaise pour avoir les coudes à hauteur du bureau\n- si vos talons ne touchent plus le sol, le repose-pieds est justifié\n- s'ils reposent déjà à plat, il vous ferait remonter les genoux trop haut\n\nHauteur, inclinaison, coussin, plateau réglable ou basculant : le guide pour choisir.\n\n#teletravail #ergonomie #bureau
+pinterest: Repose-pieds de bureau : utile ou gadget ? Quand il soulage vraiment, comment régler la hauteur et l'inclinaison, coussin en mousse, plateau réglable ou basculant. Le guide pour bien choisir un repose-pieds pour le télétravail.
 ---
 Le repose-pieds de bureau a une réputation d'accessoire secondaire. Pour certaines personnes, il est pourtant indispensable à une posture correcte ; pour d'autres, il ne sert à rien. Voici comment savoir dans quel cas vous êtes, et comment le choisir et le régler.
 

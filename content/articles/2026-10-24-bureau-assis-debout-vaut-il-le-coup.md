@@ -3,6 +3,8 @@ title: Bureau assis-debout : est-ce que ça vaut vraiment le coup ?
 description: Manuel, électrique ou convertisseur à poser : ce qu'un bureau assis-debout change au quotidien, pour qui il est utile et combien il faut prévoir.
 date: 2026-10-24
 category: Bureaux
+linkedin: Rester debout huit heures n'est pas plus sain que rester assis huit heures. L'intérêt d'un bureau assis-debout, c'est de pouvoir alterner.\n\nAvant d'acheter :\n- le convertisseur à poser sur le bureau permet de tester pour 100 à 250 euros\n- le modèle électrique est le seul avec lequel on change vraiment de position\n- vérifiez la plage de hauteur par rapport à votre taille et la stabilité en position haute\n\nLe guide détaille les trois familles, les critères et le budget à prévoir.\n\n#teletravail #bureau #ergonomie
+pinterest: Bureau assis-debout : est-ce que ça vaut le coup ? Convertisseur à poser, bureau à manivelle ou électrique, plage de hauteur, stabilité et budget. Le guide pour choisir un bureau réglable en hauteur pour le télétravail et vraiment alterner assis et debout.
 ---
 
 Le bureau assis-debout est passé en quelques années du gadget de start-up à l'équipement courant. Mais rester debout huit heures n'est pas plus sain que rester assis huit heures : l'intérêt est de **pouvoir alterner**. Voici comment savoir si c'est fait pour vous, et quel type choisir.

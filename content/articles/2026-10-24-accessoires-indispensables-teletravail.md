@@ -3,6 +3,8 @@ title: Les accessoires indispensables pour télétravailler sans douleurs
 description: Support d'ordinateur portable, clavier externe, repose-pieds, coussin lombaire : les petits achats qui améliorent le plus un poste de télétravail, et dans quel ordre les faire.
 date: 2026-10-24
 category: Accessoires
+linkedin: Pas le budget pour une chaise haut de gamme et un bureau électrique ? Quelques accessoires à quelques dizaines d'euros corrigent les défauts les plus courants d'un poste improvisé.\n\nDans l'ordre :\n- un support pour ordinateur portable avec clavier et souris externes, le premier achat à faire\n- un coussin lombaire et un repose-pieds pour rendre une chaise ordinaire supportable\n- un bras d'écran et un passe-câbles pour retrouver un plateau utilisable\n\nLe guide donne l'ordre d'achat et le budget de chaque étape.\n\n#teletravail #ergonomie #accessoires
+pinterest: Les accessoires indispensables pour télétravailler sans douleurs : support ordinateur portable, clavier et souris externes, coussin lombaire, repose-pieds, bras d'écran, hub USB-C, passe-câbles. Dans quel ordre les acheter et pour quel budget.
 ---
 
 Tout le monde n'a pas le budget, ni la place, pour une chaise haut de gamme et un bureau électrique. Mais quelques accessoires bien choisis, pour quelques dizaines d'euros chacun, corrigent les défauts les plus courants d'un poste de travail improvisé. Voici lesquels, et dans quel ordre les acheter.

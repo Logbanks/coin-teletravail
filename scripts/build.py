@@ -191,6 +191,8 @@ def load_articles() -> list[dict]:
             "html": html_body,
             "toc": toc,
             "image": (f"{BASE_PATH}/{meta['image'].lstrip('/')}" if meta.get("image") else category_image(slugify(category))),
+            "linkedin": meta.get("linkedin", "").replace("\\n", "\n"),
+            "pinterest": meta.get("pinterest", ""),
         })
     articles.sort(key=lambda a: (a["date"], a["title"]), reverse=True)
     return articles
@@ -409,25 +411,49 @@ def build() -> None:
     write(DIST / "sitemap.xml", "\n".join(sitemap))
     write(DIST / "robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n")
 
-    rss_items = []
-    for a in articles[:20]:
-        pub = dt.datetime.combine(dt.date.fromisoformat(a["date"]), dt.time(8, 0), tzinfo=dt.timezone.utc)
-        rss_items.append(
-            "    <item>\n"
-            f"      <title>{esc(a['title'])}</title>\n"
-            f"      <link>{esc(a['url'])}</link>\n"
-            f"      <guid>{esc(a['url'])}</guid>\n"
-            f"      <pubDate>{pub.strftime('%a, %d %b %Y %H:%M:%S +0000')}</pubDate>\n"
-            f"      <description>{esc(a['description'])}</description>\n"
-            "    </item>"
+    def image_abs(a: dict) -> str:
+        return SITE_URL + a["image"][len(BASE_PATH):] if a["image"] else ""
+
+    def rss_feed(items: list[dict], title_suffix: str, text_of) -> str:
+        """Construit un flux RSS 2.0 ; text_of(article) donne le texte de <description>."""
+        out = []
+        for a in items:
+            pub = dt.datetime.combine(dt.date.fromisoformat(a["date"]), dt.time(8, 0), tzinfo=dt.timezone.utc)
+            img = image_abs(a)
+            enclosure = ""
+            if img:
+                local = DIST / a["image"][len(BASE_PATH) + 1:]
+                size = local.stat().st_size if local.exists() else 0
+                mime = "image/png" if img.endswith(".png") else "image/jpeg"
+                enclosure = f'      <enclosure url="{esc(img)}" length="{size}" type="{mime}"/>\n'
+            out.append(
+                "    <item>\n"
+                f"      <title>{esc(a['title'])}</title>\n"
+                f"      <link>{esc(a['url'])}</link>\n"
+                f"      <guid isPermaLink=\"true\">{esc(a['url'])}</guid>\n"
+                f"      <pubDate>{pub.strftime('%a, %d %b %Y %H:%M:%S +0000')}</pubDate>\n"
+                f"      <category>{esc(a['category'])}</category>\n"
+                f"      <description>{esc(text_of(a))}</description>\n"
+                + enclosure +
+                "    </item>"
+            )
+        return (
+            '<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0">\n  <channel>\n'
+            f"    <title>{esc(CONFIG['site_name'] + title_suffix)}</title>\n    <link>{esc(SITE_URL)}/</link>\n"
+            f"    <description>{esc(CONFIG['description'])}</description>\n    <language>fr</language>\n"
+            + "\n".join(out) + "\n  </channel>\n</rss>\n"
         )
-    rss = (
-        '<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0">\n  <channel>\n'
-        f"    <title>{esc(CONFIG['site_name'])}</title>\n    <link>{esc(SITE_URL)}/</link>\n"
-        f"    <description>{esc(CONFIG['description'])}</description>\n    <language>fr</language>\n"
-        + "\n".join(rss_items) + "\n  </channel>\n</rss>\n"
-    )
-    write(DIST / "feed.xml", rss)
+
+    # Flux pour les lecteurs
+    write(DIST / "feed.xml", rss_feed(articles[:20], "", lambda a: a["description"]))
+    # Flux pour l'automatisation LinkedIn : description = texte du post, lien ajouté à la fin
+    write(DIST / "feed-linkedin.xml", rss_feed(
+        [a for a in articles[:20] if a["linkedin"]], " — LinkedIn",
+        lambda a: a["linkedin"].rstrip() + "\n\n" + a["url"]))
+    # Flux pour l'automatisation Pinterest : description = texte de l'épingle, image en enclosure
+    write(DIST / "feed-pinterest.xml", rss_feed(
+        [a for a in articles[:20] if a["pinterest"] and a["image"]], " — Pinterest",
+        lambda a: a["pinterest"]))
 
     print(f"Site généré : {len(articles)} articles, {len(cat_list)} catégories, {len(pages)} pages -> {DIST}")
 

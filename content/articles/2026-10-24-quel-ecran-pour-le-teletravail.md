@@ -3,6 +3,8 @@ title: Quel écran choisir pour le télétravail ? Taille, résolution et confor
 description: 24, 27 ou 32 pouces, Full HD ou 4K, un ou deux écrans : le guide pour choisir un écran de bureau qui ménage vos yeux et votre nuque.
 date: 2026-10-24
 category: Écrans et informatique
+linkedin: Travailler toute la journée sur l'écran d'un ordinateur portable, c'est travailler penché sur une surface trop petite et trop basse.\n\nPour choisir un écran de bureau sans se perdre dans les fiches techniques :\n- 27 pouces en QHD est le meilleur compromis pour la bureautique\n- une dalle IPS mate et un pied réglable en hauteur, le critère que tout le monde oublie\n- le haut de l'écran à hauteur des yeux, à une longueur de bras\n\nTaille, résolution, connectique USB-C, un ou deux écrans : tout est dans le guide.\n\n#teletravail #ecran #bureau
+pinterest: Quel écran choisir pour le télétravail ? 24, 27 ou 32 pouces, Full HD, QHD ou 4K, dalle IPS, pied réglable en hauteur, USB-C, un ou deux écrans. Le guide pour un écran de bureau qui ménage les yeux et la nuque quand on travaille de chez soi.
 ---
 
 Travailler toute la journée sur l'écran d'un ordinateur portable, c'est travailler penché sur une surface trop petite et trop basse. Un écran externe est, après la chaise, l'achat qui améliore le plus le confort en télétravail. Voici comment le choisir sans se perdre dans les fiches techniques.

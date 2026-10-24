@@ -3,6 +3,8 @@ title: Comment choisir une chaise de bureau ergonomique pour le télétravail
 description: Réglages indispensables, soutien lombaire, matériaux et budget : le guide pour choisir une chaise de bureau qui tient la journée sans vous casser le dos.
 date: 2026-10-24
 category: Chaises et sièges
+linkedin: Huit heures par jour sur une chaise de cuisine, c'est le dos qui finit par payer la facture.\n\nCe qu'il faut exiger d'une chaise de bureau avant de regarder la couleur :\n- une profondeur d'assise réglable, le réglage que tout le monde oublie\n- un soutien lombaire que l'on peut monter ou descendre, pas un simple renflement fixe\n- un dossier inclinable dont la résistance s'adapte à votre poids\n\nEntre 150 et 300 euros, on trouve aujourd'hui tout cela. Le guide complet explique quoi vérifier et comment régler la chaise le premier jour.\n\n#teletravail #ergonomie #bureau
+pinterest: Comment choisir une chaise de bureau ergonomique pour le télétravail : les réglages indispensables, profondeur d'assise, soutien lombaire, accoudoirs, résille ou rembourrage, et le budget réaliste pour une chaise qui tient toute la journée sans douleur au dos.
 ---
 
 Si vous travaillez de chez vous plus de quelques heures par jour, la chaise est l'achat qui change le plus votre confort. Une chaise de cuisine ou un fauteuil de salon ne sont pas conçus pour huit heures devant un écran, et le dos finit toujours par le rappeler. Voici ce qui compte vraiment au moment de choisir.

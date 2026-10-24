@@ -3,6 +3,8 @@ title: Éclairage du bureau à domicile : éviter la fatigue visuelle au quotidi
 description: Lumière du jour, lampe de bureau, température de couleur et reflets : comment éclairer son poste de télétravail pour ménager ses yeux et bien paraître en visio.
 date: 2026-10-24
 category: Éclairage
+linkedin: Yeux qui piquent en fin d'après-midi, maux de tête légers : la fatigue visuelle vient rarement de l'écran lui-même, bien plus souvent d'un éclairage mal pensé autour de lui.\n\nTrois réglages simples :\n- placer le bureau perpendiculairement à la fenêtre, jamais face ni dos à elle\n- une lampe à bras articulé, intensité et température de couleur réglables, posée sur le côté\n- la règle des 20-20-20 : toutes les vingt minutes, regarder vingt secondes au loin\n\nLumens, kelvins, reflets, éclairage du visage en visio : le guide complet.\n\n#teletravail #eclairage #bienetre
+pinterest: Éclairage du bureau à domicile : comment éviter la fatigue visuelle en télétravail. Position du bureau par rapport à la fenêtre, lampe de bureau LED à température de couleur réglable, barre lumineuse pour écran, reflets, éclairage du visage pour la visioconférence.
 ---
 
 Yeux qui piquent en fin d'après-midi, maux de tête légers, envie de plisser les paupières devant l'écran : la fatigue visuelle est l'un des désagréments les plus fréquents du télétravail. Elle vient rarement de l'écran lui-même, bien plus souvent d'un éclairage mal pensé autour de lui. Bonne nouvelle, cela se corrige sans gros budget.

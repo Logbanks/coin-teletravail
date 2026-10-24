@@ -3,6 +3,8 @@ title: Casque et micro pour la visioconférence : les critères qui comptent
 description: Être bien entendu et ne pas finir la journée avec les oreilles en feu : comment choisir un casque ou un micro pour les réunions à distance.
 date: 2026-10-24
 category: Audio et visioconférence
+linkedin: En télétravail, votre voix est votre présence. On pardonne une caméra moyenne, jamais une voix inaudible.\n\nPour être bien entendu en réunion :\n- le micro de l'ordinateur est trop loin de la bouche, un casque avec perche règle le problème\n- privilégiez le confort après deux heures et la qualité du micro, pas la qualité musicale\n- enregistrez-vous trente secondes : c'est le seul moyen de savoir ce que vos collègues entendent\n\nCasque, écouteurs, micro de table ou micro-cravate : le guide compare les options et les critères.\n\n#teletravail #visioconference #audio
+pinterest: Casque et micro pour la visioconférence : casque-micro filaire ou sans fil, écouteurs, micro USB de table, réduction de bruit, confort sur la durée. Les critères pour être bien entendu en réunion à distance quand on travaille de chez soi.
 ---
 
 En télétravail, votre voix est votre présence. Un micro qui grésille, une voix lointaine ou le bruit de la rue derrière vous fatiguent vos collègues et vous font répéter. Un casque ou un micro adapté est un achat modeste qui améliore immédiatement toutes vos réunions.

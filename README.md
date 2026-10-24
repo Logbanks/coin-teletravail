@@ -64,6 +64,23 @@ D'autres programmes paient parfois mieux sur le mobilier de bureau (marques en d
 
 Le choix de liens de **recherche** plutôt que de produits précis est volontaire : les produits disparaissent, les recherches restent valides, et le robot rédacteur ne peut pas inventer de référence inexistante.
 
+## Réseaux sociaux : flux prêts à poster
+
+Chaque article porte deux champs d'en-tête rédigés par le robot (ou à la main) :
+
+```
+linkedin: Accroche.\n\n- conseil 1\n- conseil 2\n- conseil 3\n\nInvitation à lire.\n\n#hashtag1 #hashtag2
+pinterest: Description de l'épingle avec les mots clés, 150 à 400 caractères.
+```
+
+Les sauts de ligne du champ `linkedin` s'écrivent `\n` (le champ tient sur une ligne). Le générateur produit :
+
+- `feed-linkedin.xml` : description = texte LinkedIn suivi du lien de l'article ;
+- `feed-pinterest.xml` : description = texte Pinterest, image de l'article en `enclosure` ;
+- `feed.xml` : flux classique pour les lecteurs, avec image.
+
+Un automate (Make, Zapier, IFTTT…) lit ces flux et publie. Le branchement pas à pas est dans `A_FAIRE.md`, section 11. Un article sans champ `linkedin` ou `pinterest` est simplement absent du flux correspondant.
+
 ## Publicité Google AdSense
 
 Désactivée par défaut. Pour l'activer, mets ton identifiant éditeur dans `config.json` :
