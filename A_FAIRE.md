@@ -30,11 +30,11 @@ git push -u origin main
 - [x] Test : onglet **Actions → Publier le site → Run workflow**, laisse la case « Rédiger un nouvel article » cochée, lance.
       Trois minutes plus tard, un nouvel article apparaît sur le site. Ensuite, c'est tous les lundis à 8 h (heure française, 6 h UTC).
 
-## 3. Gagner de l'argent : le Partenariat Amazon — 20 min
+## 3. Gagner de l'argent : le Partenariat Amazon — identifiant cointeletrava-21 en place le 24/10/2026 ; reste : 3 ventes en 180 jours
 
-- [ ] Inscris-toi sur https://partenaires.amazon.fr avec l'adresse de ton site. Tu devras indiquer ton identité et tes coordonnées bancaires pour être payé.
-- [ ] Récupère ton **identifiant de partenaire** (il se termine par `-21`, par exemple `moncoin-21`).
-- [ ] Dans `config.json`, remplace `VOTRE-TAG-21` par cet identifiant, puis :
+- [x] Inscris-toi sur https://partenaires.amazon.fr avec l'adresse de ton site. Tu devras indiquer ton identité et tes coordonnées bancaires pour être payé.
+- [x] Récupère ton **identifiant de partenaire** (il se termine par `-21`, par exemple `moncoin-21`).
+- [x] Dans `config.json`, remplace `VOTRE-TAG-21` par cet identifiant, puis :
 
 ```bash
 git commit -am "Identifiant partenaire Amazon"
