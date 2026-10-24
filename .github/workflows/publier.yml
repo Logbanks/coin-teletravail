@@ -62,11 +62,6 @@ jobs:
             git push
           fi
 
-      - name: Activer GitHub Pages si besoin
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
       - name: Construire le site
         run: python scripts/build.py
 
