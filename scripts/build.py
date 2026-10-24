@@ -411,6 +411,14 @@ def build() -> None:
     write(DIST / "sitemap.xml", "\n".join(sitemap))
     write(DIST / "robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n")
 
+    def linkedin_ltf(text: str) -> str:
+        """Met le texte au format « little Text Format » attendu par l'API LinkedIn :
+        caractères réservés échappés, hashtags convertis en {hashtag|\\#|mot}."""
+        reserved = "\\|{}@[]()<>*_~"
+        out = "".join("\\" + ch if ch in reserved else ch for ch in text)
+        out = re.sub(r"#(\w+)", lambda m: "{hashtag|\\#|" + m.group(1) + "}", out)
+        return out.replace("#", "\\#").replace("{hashtag|\\\\#|", "{hashtag|\\#|")
+
     def image_abs(a: dict) -> str:
         return SITE_URL + a["image"][len(BASE_PATH):] if a["image"] else ""
 
@@ -449,7 +457,7 @@ def build() -> None:
     # Flux pour l'automatisation LinkedIn : description = texte du post, lien ajouté à la fin
     write(DIST / "feed-linkedin.xml", rss_feed(
         [a for a in articles[:20] if a["linkedin"]], " — LinkedIn",
-        lambda a: a["linkedin"].rstrip() + "\n\n" + a["url"]))
+        lambda a: linkedin_ltf(a["linkedin"].rstrip() + "\n\n" + a["url"])))
     # Flux pour l'automatisation Pinterest : description = texte de l'épingle, image en enclosure
     write(DIST / "feed-pinterest.xml", rss_feed(
         [a for a in articles[:20] if a["pinterest"] and a["image"]], " — Pinterest",
