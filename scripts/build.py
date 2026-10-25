@@ -457,7 +457,7 @@ def build() -> None:
     # Flux pour l'automatisation LinkedIn : description = texte du post, lien ajouté à la fin
     write(DIST / "feed-linkedin.xml", rss_feed(
         [a for a in articles[:20] if a["linkedin"]], " — LinkedIn",
-        lambda a: linkedin_ltf(a["linkedin"].rstrip())))
+        lambda a: linkedin_ltf(a["linkedin"].rstrip() + "\n\n" + a["url"])))
     # Flux pour l'automatisation Pinterest : description = texte de l'épingle, image en enclosure
     write(DIST / "feed-pinterest.xml", rss_feed(
         [a for a in articles[:20] if a["pinterest"] and a["image"]], " — Pinterest",

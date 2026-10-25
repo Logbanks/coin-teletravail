@@ -75,7 +75,7 @@ pinterest: Description de l'épingle avec les mots clés, 150 à 400 caractères
 
 Les sauts de ligne du champ `linkedin` s'écrivent `\n` (le champ tient sur une ligne). Le générateur produit :
 
-- `feed-linkedin.xml` : description = texte LinkedIn au format « little Text Format » de l'API LinkedIn (hashtags codés), sans le lien, qui est porté par la carte Article ;
+- `feed-linkedin.xml` : description = texte LinkedIn au format « little Text Format » de l'API LinkedIn (hashtags codés), suivi du lien de l'article (filet de sécurité si la carte Article venait à manquer) ;
 - `feed-pinterest.xml` : description = texte Pinterest, image de l'article en `enclosure` ;
 - `feed.xml` : flux classique pour les lecteurs, avec image.
 

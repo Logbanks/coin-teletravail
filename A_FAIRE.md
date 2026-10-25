@@ -99,7 +99,7 @@ Deux scénarios Make (make.com, plan gratuit) lisent chaque jour les flux du sit
 | LinkedIn | `feed-linkedin.xml` | RSS → HTTP « Download a file » (image) → LinkedIn « Create a User Text Post », Media Type **Article** (URL, Title, Thumbnail = fichier HTTP) | tous les jours 9 h 00 | From now on |
 | Pinterest | `feed-pinterest.xml` | RSS → Pinterest « Create a Pin » (Image URL = Enclosures[] URL, Board, Pin Name = Title, Description, Link = URL) | tous les jours 9 h 30 | All (épingle un article existant par jour, puis les nouveaux) |
 
-Le texte LinkedIn et la description Pinterest de chaque article sont rédigés par le robot (champs `linkedin:` et `pinterest:` de l'en-tête). Le lien de l'article est porté par la carte LinkedIn, il n'est plus répété dans le texte.
+Le texte LinkedIn et la description Pinterest de chaque article sont rédigés par le robot (champs `linkedin:` et `pinterest:` de l'en-tête). Le lien de l'article figure à la fin du texte et dans la carte LinkedIn. Après toute modification d'un module, cliquer sur **Save** en bas de l'écran du scénario, sinon la version active reste l'ancienne.
 
 Entretien : aucun. Si Make affiche un scénario en erreur (mail de Make), c'est en général la connexion LinkedIn ou Pinterest à renouveler : ouvrir le module, cliquer sur la connexion, « Reauthorize ».
 
