@@ -458,6 +458,11 @@ def build() -> None:
     write(DIST / "feed-linkedin.xml", rss_feed(
         [a for a in articles[:20] if a["linkedin"]], " — LinkedIn",
         lambda a: linkedin_ltf(a["linkedin"].rstrip() + "\n\n" + a["url"])))
+    # Flux pour l'automatisation Facebook : même texte que LinkedIn mais brut (Facebook accepte les
+    # hashtags tels quels) ; le lien est dans <link>, Facebook génère la carte depuis les balises og:.
+    write(DIST / "feed-facebook.xml", rss_feed(
+        [a for a in articles[:20] if a["linkedin"]], " — Facebook",
+        lambda a: a["linkedin"].rstrip()))
     # Flux pour l'automatisation Pinterest : description = texte de l'épingle, image en enclosure
     write(DIST / "feed-pinterest.xml", rss_feed(
         [a for a in articles[:20] if a["pinterest"] and a["image"]], " — Pinterest",

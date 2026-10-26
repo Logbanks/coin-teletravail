@@ -103,6 +103,27 @@ Le texte LinkedIn et la description Pinterest de chaque article sont rédigés p
 
 Entretien : aucun. Si Make affiche un scénario en erreur (mail de Make), c'est en général la connexion LinkedIn ou Pinterest à renouveler : ouvrir le module, cliquer sur la connexion, « Reauthorize ».
 
+## 12. Publication automatique Facebook — 20 min, une seule fois
+
+Meta n'autorise les automates que sur une **Page**, pas sur un profil personnel. Le flux `https://teletravail.logroot.fr/feed-facebook.xml` est prêt : texte du post dans *description*, adresse de l'article dans *link*. Facebook fabrique lui-même la carte avec l'image à partir du lien.
+
+### Créer la Page (5 min)
+
+- [ ] Sur Facebook : menu → **Pages** → **Créer une Page**. Nom : `Le Coin Télétravail`. Catégorie : « Site web » ou « Blog personnel ». Description : reprendre l'accroche du site. Enregistre.
+- [ ] Photo de profil : le favicon ou l'illustration de la chaise ; photo de couverture : l'illustration d'accueil (`static/img/accueil.jpg`). Site web : `https://teletravail.logroot.fr`.
+
+### Scénario Make (10 min)
+
+- [ ] Nouveau scénario dans Make. Premier module **RSS → Watch RSS feed items**, URL `https://teletravail.logroot.fr/feed-facebook.xml`, maximum 1, **From now on**.
+- [ ] Deuxième module : **Facebook Pages → Create a Post**. Connecte ton compte Facebook et autorise Make à gérer la Page.
+- [ ] Page : choisis « Le Coin Télétravail ». **Message** : pastille **Description** du RSS. **Link** : pastille **URL** du RSS. Rien d'autre.
+- [ ] Horaire en haut à droite : **Every day** à **10:00**. **Save** en bas de l'écran, puis **Active**.
+- [ ] Test : clic droit sur le module RSS → « Choose where to start » → **All** → Run once. Le post doit apparaître sur la Page avec la carte illustrée. Puis remettre **From now on** et **Save**.
+
+Si tu préfères un post avec l'image en grand plutôt qu'une carte : module **Facebook Pages → Create a Photo Post**, Photo URL = pastille **Enclosures[] : URL**, Message = Description suivie de l'URL.
+
+Instagram pourra se brancher ensuite sur cette même Page (compte Instagram professionnel relié à la Page, module « Instagram for Business → Create a Photo Post »).
+
 ## Facultatif, plus tard
 
 - **Un nom de domaine** (environ 10 €/an, par exemple `coin-teletravail.fr`) améliore la crédibilité et le référencement. Dans `config.json`, mets `"url": "https://coin-teletravail.fr"` ; le fichier `CNAME` est généré automatiquement. Chez ton registrar, ajoute un enregistrement CNAME `www` ou les 4 enregistrements A de GitHub Pages (voir la doc GitHub « Managing a custom domain »).
