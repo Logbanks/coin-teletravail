@@ -9,7 +9,7 @@ Variables d'environnement :
   ANTHROPIC_API_KEY   obligatoire
   MODEL               facultatif, par défaut claude-opus-5-5
 
-Usage : python scripts/generate_article.py [--dry-run]
+Usage : python scripts/generate_article.py [--dry-run] [--force]
 """
 
 from __future__ import annotations
@@ -156,6 +156,11 @@ def main() -> int:
         print("ANTHROPIC_API_KEY mal formée : elle doit commencer par sk-ant- et ne contenir aucun espace. "
               "Recréez le secret en collant la clé seule.", file=sys.stderr)
         return 2
+
+    today = dt.date.today().isoformat()
+    if "--force" not in sys.argv and any(ARTICLES_DIR.glob(f"{today}-*.md")):
+        print(f"Un article daté du {today} existe déjà : rien à rédiger (utilisez --force pour passer outre).")
+        return 0
 
     client = anthropic.Anthropic(api_key=api_key)
     topics = json.loads(TOPICS_FILE.read_text(encoding="utf-8"))

@@ -106,7 +106,7 @@ Entretien : aucun. Si Make affiche un scénario en erreur (mail de Make), c'est 
 ## Facultatif, plus tard
 
 - **Un nom de domaine** (environ 10 €/an, par exemple `coin-teletravail.fr`) améliore la crédibilité et le référencement. Dans `config.json`, mets `"url": "https://coin-teletravail.fr"` ; le fichier `CNAME` est généré automatiquement. Chez ton registrar, ajoute un enregistrement CNAME `www` ou les 4 enregistrements A de GitHub Pages (voir la doc GitHub « Managing a custom domain »).
-- **Changer la fréquence** : dans `.github/workflows/publier.yml`, la ligne `cron: "0 6 * * 1"` = lundi 6 h UTC. Deux articles par semaine : `"0 6 * * 1,4"`.
+- **Changer la fréquence** : dans `.github/workflows/publier.yml`, les lignes `cron:` (lundi 6 h 23 UTC, rattrapage à 11 h 41). Deux articles par semaine : remplacer `* * 1` par `* * 1,4` sur les deux lignes. Garder des minutes décalées, GitHub saute souvent les crons à l'heure pile.
 - **Ajouter des sujets** : complète la liste `a_faire` dans `topics.json`. Quand elle est vide, le robot invente lui-même dix nouveaux sujets.
 - **Relire** : tous les articles générés arrivent dans `content/articles/`. Tu peux en modifier ou en supprimer un, puis push : le site se reconstruit.
 

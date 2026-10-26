@@ -1,6 +1,7 @@
 # Publication automatique du site.
 #
-# - Chaque lundi à 6h (UTC) : rédige un nouvel article avec Claude, le commite,
+# - Chaque lundi (deux créneaux, le second ne sert que si le premier a été sauté) :
+#   rédige un nouvel article avec Claude, le commite,
 #   reconstruit le site et le déploie sur GitHub Pages.
 # - À chaque push sur main : reconstruit et déploie seulement (pas de nouvel article).
 # - Lancement manuel possible depuis l'onglet Actions (case « Rédiger un article »).
@@ -9,7 +10,12 @@ name: Publier le site
 
 on:
   schedule:
-    - cron: "0 6 * * 1"
+    # Lundi 6 h 23 UTC (7 h 23 / 8 h 23 heure de Paris). Minute décalée : GitHub retarde
+    # ou saute souvent les planifications à l'heure pile.
+    - cron: "23 6 * * 1"
+    # Rattrapage le même jour si le premier créneau a été sauté. Le script ne rédige
+    # pas de second article si un article porte déjà la date du jour.
+    - cron: "41 11 * * 1"
   push:
     branches: [main]
   workflow_dispatch:
