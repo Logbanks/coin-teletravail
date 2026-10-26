@@ -1,11 +1,6 @@
 {
   "a_faire": [
     {
-      "titre": "Clavier et souris ergonomiques : faut-il changer ses habitudes ?",
-      "angle": "douleurs au poignet, clavier compact ou séparé, souris verticale",
-      "category": "Accessoires"
-    },
-    {
       "titre": "Support pour ordinateur portable : pourquoi en avoir un et comment le choisir",
       "angle": "hauteur des yeux, ventilation, modèles pliables pour nomades",
       "category": "Accessoires"
@@ -153,6 +148,13 @@
       "category": "Accessoires",
       "publie_le": "2026-10-24",
       "fichier": "2026-10-24-repose-pieds-de-bureau-utile-ou-gadget-le-guide-pour-bien-choisir.md"
+    },
+    {
+      "titre": "Clavier et souris ergonomiques : faut-il changer ses habitudes ?",
+      "angle": "douleurs au poignet, clavier compact ou séparé, souris verticale",
+      "category": "Accessoires",
+      "publie_le": "2026-10-26",
+      "fichier": "2026-10-26-clavier-et-souris-ergonomiques-faut-il-changer-ses-habitudes.md"
     }
   ]
 }
