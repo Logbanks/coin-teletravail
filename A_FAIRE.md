@@ -124,6 +124,28 @@ Si tu préfères un post avec l'image en grand plutôt qu'une carte : module **F
 
 Instagram pourra se brancher ensuite sur cette même Page (compte Instagram professionnel relié à la Page, module « Instagram for Business → Create a Photo Post »).
 
+## 13. Déclencheur fiable du lundi via Make — 10 min, une seule fois
+
+GitHub ne garantit pas l'heure de ses planifications : le 26 octobre le créneau a été sauté, le 2 novembre l'article n'est sorti qu'à 17 h 13, après le passage de Make. Make, lui, est ponctuel. On lui confie donc le déclenchement ; les créneaux GitHub restent en secours (pas de doublon possible, le script refuse d'écrire deux articles le même jour).
+
+### Créer un jeton GitHub limité à ce site (4 min)
+
+- [ ] GitHub → photo en haut à droite → **Settings** → tout en bas **Developer settings** → **Personal access tokens** → **Fine-grained tokens** → **Generate new token**.
+- [ ] Token name : `make-coin-teletravail`. Expiration : **1 an** (note la date pour le renouveler). Repository access : **Only select repositories** → `coin-teletravail`.
+- [ ] Permissions → Repository permissions → **Actions** : **Read and write**. Rien d'autre.
+- [ ] **Generate token**, copie la valeur (commence par `github_pat_`). Ne la colle nulle part ailleurs que dans Make.
+
+### Scénario Make (6 min)
+
+- [ ] Nouveau scénario. Module **HTTP → Make a request**.
+- [ ] URL : `https://api.github.com/repos/Logbanks/coin-teletravail/actions/workflows/publier.yml/dispatches` — Method : **POST**.
+- [ ] Headers (3 lignes) : `Authorization` = `Bearer ` suivi du jeton ; `Accept` = `application/vnd.github+json` ; `X-GitHub-Api-Version` = `2022-11-28`.
+- [ ] Body type : **Raw**, Content type : **JSON (application/json)**, Request content : `{"ref":"main","inputs":{"rediger":"true"}}`
+- [ ] Horloge en bas à gauche / en haut à droite : **Days of the week** → **Monday** à **07:30**. Save, **Active**.
+- [ ] Test : **Run once**. Le module doit afficher un statut **204**. Trois minutes plus tard, un nouvel article est en ligne s'il n'y en avait pas déjà un daté du jour (sinon le robot ne fait rien, c'est normal).
+
+Ensuite chaque lundi : Make lance la rédaction à 7 h 30, l'article est en ligne vers 7 h 35, LinkedIn le reprend à 9 h, Pinterest à 9 h 30, Facebook à 10 h.
+
 ## Facultatif, plus tard
 
 - **Un nom de domaine** (environ 10 €/an, par exemple `coin-teletravail.fr`) améliore la crédibilité et le référencement. Dans `config.json`, mets `"url": "https://coin-teletravail.fr"` ; le fichier `CNAME` est généré automatiquement. Chez ton registrar, ajoute un enregistrement CNAME `www` ou les 4 enregistrements A de GitHub Pages (voir la doc GitHub « Managing a custom domain »).
