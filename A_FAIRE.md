@@ -171,7 +171,14 @@ Dès qu'un nouvel article est en ligne, GitHub envoie à Make un paquet prêt à
 - [ ] **Désactive l'ancien scénario Facebook** (celui qui lit le flux RSS à 10 h), sinon chaque article serait publié deux fois.
 - [ ] Test final : relance le même « Run workflow » côté GitHub (Rédiger décoché, Renvoyer coché). Le post doit apparaître sur la Page dans les trois minutes, avec la carte illustrée.
 
-Plus tard, LinkedIn et Pinterest peuvent passer sur ce même webhook (le paquet contient déjà leurs textes et l'image) ; il suffira d'ajouter leurs modules derrière le webhook et de désactiver leurs scénarios RSS.
+### Ajouter LinkedIn sur le même webhook
+
+- [ ] Clique sur la clé à molette entre le webhook et Facebook → **Add a router**. Facebook devient la première branche.
+- [ ] Clique sur le **+** libre du routeur → **HTTP → Download a file**, URL = pastille **image**.
+- [ ] Derrière, **LinkedIn → Create a User Text Post** : Content = pastille **linkedin** ; Media Type = **Article** ; URL = **url** ; Title = **titre** ; Thumbnail → File = **HTTP - Download a file** ; Thumbnail Alt Text = **titre** ; Visibility = Anyone. Save.
+- [ ] **Save** en bas de l'écran, puis désactive l'ancien scénario LinkedIn (flux RSS de 9 h).
+
+Plus tard, Pinterest peut passer sur ce même webhook (le paquet contient déjà leurs textes et l'image) ; il suffira d'ajouter leurs modules derrière le webhook et de désactiver leurs scénarios RSS.
 
 ## Facultatif, plus tard
 
