@@ -194,6 +194,9 @@ def main() -> int:
     body = call_claude(client, system, user)
     path = write_article(topic, body)
     print(f"Article écrit : {path.relative_to(ROOT)}")
+    if os.environ.get("GITHUB_OUTPUT"):
+        with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as fh:
+            fh.write(f"article={path.name}\n")
 
     topics["a_faire"].pop(0)
     topic["publie_le"] = dt.date.today().isoformat()

@@ -80,6 +80,8 @@ Les sauts de ligne du champ `linkedin` s'écrivent `\n` (le champ tient sur une 
 - `feed-pinterest.xml` : description = texte Pinterest, image de l'article en `enclosure` ;
 - `feed.xml` : flux classique pour les lecteurs, avec image.
 
+En plus des flux, `scripts/annoncer.py` envoie un webhook à Make (secret `MAKE_WEBHOOK_URL`) dès qu'un nouvel article est déployé, avec titre, lien, image et textes par réseau : Make publie dans la foulée. Lancement manuel possible depuis Actions (« Renvoyer le dernier article aux réseaux »).
+
 Un automate (Make, Zapier, IFTTT…) lit ces flux et publie. Le branchement pas à pas est dans `A_FAIRE.md`, section 11. Un article sans champ `linkedin` ou `pinterest` est simplement absent du flux correspondant.
 
 ## Publicité Google AdSense

@@ -24,6 +24,10 @@ on:
         description: "Rédiger un nouvel article avant de publier"
         type: boolean
         default: true
+      annoncer:
+        description: "Renvoyer le dernier article aux réseaux (Make) même sans nouvel article"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -37,6 +41,8 @@ concurrency:
 jobs:
   construire:
     runs-on: ubuntu-latest
+    outputs:
+      article: ${{ steps.rediger.outputs.article }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -50,6 +56,7 @@ jobs:
         run: pip install -r scripts/requirements.txt
 
       - name: Rédiger un nouvel article
+        id: rediger
         if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.rediger)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -84,3 +91,28 @@ jobs:
     steps:
       - id: deploiement
         uses: actions/deploy-pages@v4
+
+  # Dès que le nouvel article est en ligne, on prévient Make, qui publie sur les réseaux.
+  annoncer:
+    needs: [construire, deployer]
+    if: needs.construire.outputs.article != '' || (github.event_name == 'workflow_dispatch' && inputs.annoncer)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer les dépendances
+        run: pip install -r scripts/requirements.txt
+
+      - name: Laisser le site se mettre à jour
+        run: sleep 60
+
+      - name: Prévenir Make
+        env:
+          MAKE_WEBHOOK_URL: ${{ secrets.MAKE_WEBHOOK_URL }}
+        run: python scripts/annoncer.py "${{ needs.construire.outputs.article }}"

@@ -146,6 +146,33 @@ GitHub ne garantit pas l'heure de ses planifications : le 26 octobre le créneau
 
 Ensuite chaque lundi : Make lance la rédaction à 7 h 30, l'article est en ligne vers 7 h 35, LinkedIn le reprend à 9 h, Pinterest à 9 h 30, Facebook à 10 h.
 
+## 14. Article puis Facebook dans la foulée (webhook Make) — 10 min, une seule fois
+
+Dès qu'un nouvel article est en ligne, GitHub envoie à Make un paquet prêt à publier : `titre`, `url`, `image`, `facebook` (texte du post), `linkedin`, `pinterest`. Make publie aussitôt, quelle que soit l'heure à laquelle GitHub a tourné. Plus de décalage entre l'article et le post.
+
+### Dans Make
+
+- [ ] Nouveau scénario. Premier module : **Webhooks → Custom webhook** → **Add** → nom `Nouvel article Coin Télétravail` → Save. Make affiche une adresse `https://hook.eu2.make.com/...` : clique sur **Copy address to clipboard**.
+
+### Dans GitHub
+
+- [ ] Dépôt `coin-teletravail` → **Settings → Secrets and variables → Actions → New repository secret**. Nom : `MAKE_WEBHOOK_URL`. Valeur : l'adresse copiée. Add secret.
+
+### Apprendre à Make la forme du paquet
+
+- [ ] Dans Make, clique sur **Run once** : le module webhook se met en attente (« waiting for data »).
+- [ ] Dans GitHub : onglet **Actions → Publier le site → Run workflow**. **Décoche** « Rédiger un nouvel article », **coche** « Renvoyer le dernier article aux réseaux ». Run workflow.
+- [ ] Deux à trois minutes plus tard, le module webhook de Make affiche « Successfully determined ».
+
+### Ajouter Facebook
+
+- [ ] Clique sur le **+** à droite du webhook → **Facebook Pages → Create a Post**. Page : **Log'root Informatique**. Message : pastille **facebook**. Link : pastille **url**. Save.
+- [ ] Horloge du scénario : **Immediately as data arrives**. **Save** en bas, puis **Active**.
+- [ ] **Désactive l'ancien scénario Facebook** (celui qui lit le flux RSS à 10 h), sinon chaque article serait publié deux fois.
+- [ ] Test final : relance le même « Run workflow » côté GitHub (Rédiger décoché, Renvoyer coché). Le post doit apparaître sur la Page dans les trois minutes, avec la carte illustrée.
+
+Plus tard, LinkedIn et Pinterest peuvent passer sur ce même webhook (le paquet contient déjà leurs textes et l'image) ; il suffira d'ajouter leurs modules derrière le webhook et de désactiver leurs scénarios RSS.
+
 ## Facultatif, plus tard
 
 - **Un nom de domaine** (environ 10 €/an, par exemple `coin-teletravail.fr`) améliore la crédibilité et le référencement. Dans `config.json`, mets `"url": "https://coin-teletravail.fr"` ; le fichier `CNAME` est généré automatiquement. Chez ton registrar, ajoute un enregistrement CNAME `www` ou les 4 enregistrements A de GitHub Pages (voir la doc GitHub « Managing a custom domain »).
