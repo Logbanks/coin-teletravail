@@ -1,11 +1,6 @@
 {
   "a_faire": [
     {
-      "titre": "Support pour ordinateur portable : pourquoi en avoir un et comment le choisir",
-      "angle": "hauteur des yeux, ventilation, modèles pliables pour nomades",
-      "category": "Accessoires"
-    },
-    {
       "titre": "Bras d'écran : libérer son bureau et régler la hauteur au millimètre",
       "angle": "compatibilité VESA, charge supportée, fixation pince ou perçage",
       "category": "Écrans et informatique"
@@ -155,6 +150,13 @@
       "category": "Accessoires",
       "publie_le": "2026-10-26",
       "fichier": "2026-10-26-clavier-et-souris-ergonomiques-faut-il-changer-ses-habitudes.md"
+    },
+    {
+      "titre": "Support pour ordinateur portable : pourquoi en avoir un et comment le choisir",
+      "angle": "hauteur des yeux, ventilation, modèles pliables pour nomades",
+      "category": "Accessoires",
+      "publie_le": "2026-11-02",
+      "fichier": "2026-11-02-support-pour-ordinateur-portable-pourquoi-et-comment-le-choisir.md"
     }
   ]
 }
