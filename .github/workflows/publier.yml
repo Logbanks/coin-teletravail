@@ -10,11 +10,12 @@ name: Publier le site
 
 on:
   schedule:
-    # Lundi 6 h 23 UTC (7 h 23 / 8 h 23 heure de Paris). Minute décalée : GitHub retarde
-    # ou saute souvent les planifications à l'heure pile.
-    - cron: "23 6 * * 1"
-    # Rattrapage le même jour si le premier créneau a été sauté. Le script ne rédige
-    # pas de second article si un article porte déjà la date du jour.
+    # GitHub retarde de plusieurs heures ou saute souvent les planifications.
+    # On multiplie donc les créneaux le lundi matin (toutes les 20 minutes de 6 h 07
+    # à 9 h 47 UTC) : le premier qui part rédige l'article, les suivants constatent
+    # qu'un article porte déjà la date du jour et ne font rien (pas de doublon).
+    - cron: "7,27,47 6-9 * * 1"
+    # Dernier rattrapage en début d'après-midi.
     - cron: "41 11 * * 1"
   push:
     branches: [main]
