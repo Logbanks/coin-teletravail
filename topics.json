@@ -1,11 +1,6 @@
 {
   "a_faire": [
     {
-      "titre": "Bras d'écran : libérer son bureau et régler la hauteur au millimètre",
-      "angle": "compatibilité VESA, charge supportée, fixation pince ou perçage",
-      "category": "Écrans et informatique"
-    },
-    {
       "titre": "Webcam externe ou caméra intégrée : que choisir pour les visios ?",
       "angle": "qualité d'image, cadrage, micro intégré, budget raisonnable",
       "category": "Audio et visioconférence"
@@ -157,6 +152,13 @@
       "category": "Accessoires",
       "publie_le": "2026-11-02",
       "fichier": "2026-11-02-support-pour-ordinateur-portable-pourquoi-et-comment-le-choisir.md"
+    },
+    {
+      "titre": "Bras d'écran : libérer son bureau et régler la hauteur au millimètre",
+      "angle": "compatibilité VESA, charge supportée, fixation pince ou perçage",
+      "category": "Écrans et informatique",
+      "publie_le": "2026-11-09",
+      "fichier": "2026-11-09-bras-d-ecran-bien-choisir-selon-vesa-charge-et-type-de-fixation.md"
     }
   ]
 }
